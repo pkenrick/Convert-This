@@ -27,7 +27,7 @@
                                         <color key="backgroundColor" red="0.82206808371977169" green="0.94664895002861682" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Weight"/>
                                         <connections>
-                                            <segue destination="gqy-fM-whE" kind="modal" id="4HY-Jf-ZV6"/>
+                                            <segue destination="sbU-u1-ROr" kind="modal" id="Ndj-xO-j2U"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLP-IA-O2y">
@@ -78,7 +78,7 @@
             </objects>
             <point key="canvasLocation" x="2485.5999999999999" y="82.3088455772114"/>
         </scene>
-        <!--Weight View Controller-->
+        <!--Weight Conversion-->
         <scene sceneID="3hd-oZ-v5E">
             <objects>
                 <viewController id="gqy-fM-whE" customClass="WeightViewController" sceneMemberID="viewController">
@@ -87,26 +87,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="zvK-0G-emA">
-                                <rect key="frame" x="19" y="36" width="337.5" height="615"/>
+                                <rect key="frame" x="19" y="79" width="337.5" height="573"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter weight" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Yv-FC-PeG">
-                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="72"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="67"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g2Q-d8-nxJ">
-                                        <rect key="frame" x="0.0" y="78" width="337.5" height="148.5"/>
+                                        <rect key="frame" x="0.0" y="73.5" width="337.5" height="138"/>
                                         <subviews>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CCC-aa-hIZ" userLabel="From Unit">
-                                                <rect key="frame" x="92.5" y="20" width="225" height="108.5"/>
+                                                <rect key="frame" x="92.5" y="20" width="225" height="98"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="gqy-fM-whE" id="JYP-bK-f7V"/>
                                                     <outlet property="delegate" destination="gqy-fM-whE" id="TgP-CR-Ab1"/>
                                                 </connections>
                                             </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9M-1C-5YS">
-                                                <rect key="frame" x="20" y="58" width="69" height="33.5"/>
+                                                <rect key="frame" x="20" y="52" width="69" height="33.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -123,17 +123,17 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uFr-C4-0S1">
-                                        <rect key="frame" x="0.0" y="233" width="337.5" height="149"/>
+                                        <rect key="frame" x="0.0" y="218" width="337.5" height="137.5"/>
                                         <subviews>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UfS-M1-zWd" userLabel="To Unit">
-                                                <rect key="frame" x="92.5" y="20" width="225" height="109"/>
+                                                <rect key="frame" x="92.5" y="20" width="225" height="97.5"/>
                                                 <connections>
                                                     <outlet property="dataSource" destination="gqy-fM-whE" id="xMY-Xd-fzJ"/>
                                                     <outlet property="delegate" destination="gqy-fM-whE" id="Wjd-PH-0WI"/>
                                                 </connections>
                                             </pickerView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOs-A3-jYs" userLabel="To Label">
-                                                <rect key="frame" x="20" y="57.5" width="36" height="33.5"/>
+                                                <rect key="frame" x="20" y="52" width="36" height="33.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -150,15 +150,15 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGq-Xn-EP4">
-                                        <rect key="frame" x="0.0" y="388" width="337.5" height="72"/>
+                                        <rect key="frame" x="0.0" y="362" width="337.5" height="66.5"/>
                                         <color key="backgroundColor" red="0.82206808369999995" green="0.94664895000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Convert"/>
                                         <connections>
                                             <action selector="userDidPressConvert:" destination="gqy-fM-whE" eventType="touchUpInside" id="ayX-N3-F5n"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSd-ou-TL7">
-                                        <rect key="frame" x="0.0" y="466.5" width="337.5" height="148.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSd-ou-TL7">
+                                        <rect key="frame" x="0.0" y="435" width="337.5" height="138"/>
                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <nil key="textColor"/>
@@ -185,6 +185,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="W39-zM-HcL"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Weight Conversion" id="sdr-7h-TxS">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="27V-7x-cZq">
+                            <connections>
+                                <action selector="dismissView:" destination="gqy-fM-whE" id="evf-u2-9Rd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="fromPickerCover" destination="CCC-aa-hIZ" id="FMK-Sx-vCm"/>
                         <outlet property="fromUnit" destination="CCC-aa-hIZ" id="hOW-pn-7dN"/>
@@ -196,7 +203,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ur4-Dc-JYa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3276" y="-244.22788605697153"/>
+            <point key="canvasLocation" x="4879" y="-281"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uyj-jg-SjG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sbU-u1-ROr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="arq-gr-b62">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="uAJ-3N-b4z"/>
+                    </navigationItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NFJ-EF-Y8U">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gqy-fM-whE" kind="relationship" relationship="rootViewController" id="ebv-WH-BIl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Qy-Sd-RGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4088" y="-280.65967016491754"/>
         </scene>
     </scenes>
 </document>

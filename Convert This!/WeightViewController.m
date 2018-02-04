@@ -92,7 +92,7 @@ NSString *_toUnitSelected;
     [formatter setRoundingMode:NSNumberFormatterRoundUp];
     
     NSNumber *finalResultNumber = [NSNumber numberWithFloat:finalResult];
-    NSString *formattedResult = [NSString stringWithFormat:@"%@ %@", [formatter stringFromNumber:finalResultNumber], _toUnitSelected];
+    NSString *formattedResult = [NSString stringWithFormat:@"%@\n%@", [formatter stringFromNumber:finalResultNumber], _toUnitSelected];
     resultLabel.text = formattedResult;
 }
 
@@ -128,6 +128,10 @@ NSString *_toUnitSelected;
 
 - (void)dismissKeyboard {
     [inputField resignFirstResponder];
+}
+
+- (IBAction)dismissView:(id)sender {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
