@@ -1,17 +1,17 @@
 //
-//  WeightViewController.h
+//  DistanceViewController.h
 //  Convert This!
 //
-//  Created by Paul Kenrick on 30/01/2018.
+//  Created by Paul Kenrick on 04/02/2018.
 //  Copyright © 2018 Paul Kenrick. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface WeightViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDelegate> {
+@interface DistanceViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDelegate> {
     IBOutlet UIPickerView *fromUnit;
     IBOutlet UIPickerView *toUnit;
-        
+
     IBOutlet UITextField *inputField;
     IBOutlet UILabel *resultLabel;
 }
