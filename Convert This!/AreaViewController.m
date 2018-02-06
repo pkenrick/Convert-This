@@ -1,24 +1,24 @@
 //
-//  DistanceViewController.m
+//  AreaViewController.m
 //  Convert This!
 //
 //  Created by Paul Kenrick on 04/02/2018.
 //  Copyright © 2018 Paul Kenrick. All rights reserved.
 //
 
-#import "DistanceViewController.h"
+#import "AreaViewController.h"
 
-@interface DistanceViewController ()
+@interface AreaViewController ()
 
 @end
 
-NSArray *_distanceUnitsArray;
-NSArray *_toMetreMultipliers;
-NSArray *_fromMetreMultipliers;
-NSString *_distanceFromUnitSelected;
-NSString *_distanceToUnitSelected;
+NSArray *_areaUnitsArray;
+NSArray *_toSquareMetreMultipliers;
+NSArray *_fromSquareMetreMultipliers;
+NSString *_areaFromUnitSelected;
+NSString *_areaToUnitSelected;
 
-@implementation DistanceViewController
+@implementation AreaViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,84 +41,87 @@ NSString *_distanceToUnitSelected;
     fromUnit.delegate = self;
     toUnit.delegate = self;
     
-    _distanceUnitsArray = @[
-                    @"Millimetres",
-                    @"Centimetre",
-                    @"Metre",
-                    @"Kilometre",
-                    @"Inches",
-                    @"Feet",
-                    @"Yards",
-                    @"Miles"
+    _areaUnitsArray = @[
+                    @"Square Millimetres",
+                    @"Square Centimetres",
+                    @"Square Metres",
+                    @"Hectares",
+                    @"Square Kilometres",
+                    @"Square Inches",
+                    @"Square Feet",
+                    @"Acres",
+                    @"Square Miles"
                     ];
     
-    _toMetreMultipliers = @[
-                         @0.001f,
-                         @0.01f,
+    _toSquareMetreMultipliers = @[
+                         @0.000001f,
+                         @0.0001f,
                          @1.0f,
-                         @1000.0f,
-                         @0.0254f,
-                         @0.3048f,
-                         @0.9144f,
-                         @1609.34
+                         @10000.0f,
+                         @1000000.0f,
+                         @0.00064516f,
+                         @0.092903f,
+                         @4046.86f,
+                         @2590000.0f
                          ];
     
-    _fromMetreMultipliers = @[
-                           @1000,
-                           @100,
+    _fromSquareMetreMultipliers = @[
+                           @1000000.0f,
+                           @10000.0f,
                            @1.0f,
-                           @0.001,
-                           @39.3701,
-                           @3.28083,
-                           @1.09361,
-                           @0.000621371
+                           @0.0001f,
+                           @0.000001f,
+                           @1550.0031f,
+                           @10.7639151f,
+                           @0.00024711f,
+                           @0.000000386102f
                            ];
     
 }
 
 - (IBAction)userDidPressConvert:(id)sender {
     
-    if (_distanceFromUnitSelected == nil) {
-        _distanceFromUnitSelected = [_distanceUnitsArray firstObject];
+    if (_areaFromUnitSelected == nil) {
+        _areaFromUnitSelected = [_areaUnitsArray firstObject];
     }
     
-    if (_distanceToUnitSelected == nil) {
-        _distanceToUnitSelected = [_distanceUnitsArray firstObject];
+    if (_areaToUnitSelected == nil) {
+        _areaToUnitSelected = [_areaUnitsArray firstObject];
     }
     
     float metreResult = [self convertToMetre:[inputField.text floatValue]];
     float finalResult = [self convertFromMetre:metreResult];
-    
+
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [formatter setMaximumFractionDigits:2];
     [formatter setRoundingMode:NSNumberFormatterRoundUp];
     
     NSNumber *finalResultNumber = [NSNumber numberWithFloat:finalResult];
-    NSString *formattedResult = [NSString stringWithFormat:@"%@\n%@", [formatter stringFromNumber:finalResultNumber], _distanceToUnitSelected];
+    NSString *formattedResult = [NSString stringWithFormat:@"%@\n%@", [formatter stringFromNumber:finalResultNumber], _areaToUnitSelected];
     resultLabel.text = formattedResult;
 }
 
 - (float)convertToMetre:(float)inputValue {
-    float toMetreMultiplier = [_toMetreMultipliers[[_distanceUnitsArray indexOfObject:_distanceFromUnitSelected]] floatValue];
-    return inputValue * toMetreMultiplier;
+    float toSquareMetreMultiplier = [_toSquareMetreMultipliers[[_areaUnitsArray indexOfObject:_areaFromUnitSelected]] floatValue];
+    return inputValue * toSquareMetreMultiplier;
 }
 
--(float)convertFromMetre:(float)metreValue {
-    float fromMetreMultiplier = [_fromMetreMultipliers[[_distanceUnitsArray indexOfObject:_distanceToUnitSelected]] floatValue];
-    return metreValue * fromMetreMultiplier;
+-(float)convertFromMetre:(float)kgValue {
+    float fromSquareMetreMultiplier = [_fromSquareMetreMultipliers[[_areaUnitsArray indexOfObject:_areaToUnitSelected]] floatValue];
+    return kgValue * fromSquareMetreMultiplier;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (pickerView == fromUnit) {
-        _distanceFromUnitSelected = [_distanceUnitsArray objectAtIndex:row];
+        _areaFromUnitSelected = [_areaUnitsArray objectAtIndex:row];
     } else {
-        _distanceToUnitSelected = [_distanceUnitsArray objectAtIndex:row];
+        _areaToUnitSelected = [_areaUnitsArray objectAtIndex:row];
     }
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return _distanceUnitsArray.count;
+    return _areaUnitsArray.count;
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -126,7 +129,7 @@ NSString *_distanceToUnitSelected;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return _distanceUnitsArray[row];
+    return _areaUnitsArray[row];
 }
 
 - (void)dismissKeyboard {
@@ -143,14 +146,13 @@ NSString *_distanceToUnitSelected;
 }
 
 /*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end
-

@@ -1,24 +1,24 @@
 //
-//  DistanceViewController.m
+//  VolumeViewController.m
 //  Convert This!
 //
-//  Created by Paul Kenrick on 04/02/2018.
+//  Created by Paul Kenrick on 05/02/2018.
 //  Copyright © 2018 Paul Kenrick. All rights reserved.
 //
 
-#import "DistanceViewController.h"
+#import "VolumeViewController.h"
 
-@interface DistanceViewController ()
+@interface VolumeViewController ()
 
 @end
 
-NSArray *_distanceUnitsArray;
-NSArray *_toMetreMultipliers;
-NSArray *_fromMetreMultipliers;
-NSString *_distanceFromUnitSelected;
-NSString *_distanceToUnitSelected;
+NSArray *_volumeUnitsArray;
+NSArray *_toLitreMultipliers;
+NSArray *_fromLitreMultipliers;
+NSString *_volumeFromUnitSelected;
+NSString *_volumeToUnitSelected;
 
-@implementation DistanceViewController
+@implementation VolumeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,53 +41,52 @@ NSString *_distanceToUnitSelected;
     fromUnit.delegate = self;
     toUnit.delegate = self;
     
-    _distanceUnitsArray = @[
-                    @"Millimetres",
-                    @"Centimetre",
-                    @"Metre",
-                    @"Kilometre",
-                    @"Inches",
-                    @"Feet",
-                    @"Yards",
-                    @"Miles"
-                    ];
+    _volumeUnitsArray = @[
+                            @"Millilitres",
+                            @"Litres",
+                            @"Teaspoons",
+                            @"Tablespoons",
+                            @"Cups",
+                            @"Pints",
+                            @"Gallons"
+                            ];
     
-    _toMetreMultipliers = @[
-                         @0.001f,
-                         @0.01f,
-                         @1.0f,
-                         @1000.0f,
-                         @0.0254f,
-                         @0.3048f,
-                         @0.9144f,
-                         @1609.34
-                         ];
+    _toLitreMultipliers = @[
+                            @0.001f,
+                            @1.0f,
+                            @0.00591939f,
+                            @0.0177582f,
+                            @0.236588f,
+                            @0.568261f,
+                            @4.54609
+                            ];
     
-    _fromMetreMultipliers = @[
-                           @1000,
-                           @100,
-                           @1.0f,
-                           @0.001,
-                           @39.3701,
-                           @3.28083,
-                           @1.09361,
-                           @0.000621371
-                           ];
+    _fromLitreMultipliers = @[
+                              @1000,
+                              @1.0f,
+                              @168.936326,
+                              @56.312014,
+                              @4.226757,
+                              @1.759755,
+                              @0.219969
+                              ];
     
 }
 
 - (IBAction)userDidPressConvert:(id)sender {
     
-    if (_distanceFromUnitSelected == nil) {
-        _distanceFromUnitSelected = [_distanceUnitsArray firstObject];
+    if (_volumeFromUnitSelected == nil) {
+        _volumeFromUnitSelected = [_volumeUnitsArray firstObject];
     }
     
-    if (_distanceToUnitSelected == nil) {
-        _distanceToUnitSelected = [_distanceUnitsArray firstObject];
+    if (_volumeFromUnitSelected == nil) {
+        _volumeFromUnitSelected = [_volumeUnitsArray firstObject];
     }
     
-    float metreResult = [self convertToMetre:[inputField.text floatValue]];
-    float finalResult = [self convertFromMetre:metreResult];
+    float litreResult = [self convertToLitre:[inputField.text floatValue]];
+    NSLog(@"%f", litreResult);
+    float finalResult = [self convertFromLitre:litreResult];
+    NSLog(@"%f", finalResult);
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
@@ -95,30 +94,30 @@ NSString *_distanceToUnitSelected;
     [formatter setRoundingMode:NSNumberFormatterRoundUp];
     
     NSNumber *finalResultNumber = [NSNumber numberWithFloat:finalResult];
-    NSString *formattedResult = [NSString stringWithFormat:@"%@\n%@", [formatter stringFromNumber:finalResultNumber], _distanceToUnitSelected];
+    NSString *formattedResult = [NSString stringWithFormat:@"%@\n%@", [formatter stringFromNumber:finalResultNumber], _volumeToUnitSelected];
     resultLabel.text = formattedResult;
 }
 
-- (float)convertToMetre:(float)inputValue {
-    float toMetreMultiplier = [_toMetreMultipliers[[_distanceUnitsArray indexOfObject:_distanceFromUnitSelected]] floatValue];
-    return inputValue * toMetreMultiplier;
+- (float)convertToLitre:(float)inputValue {
+    float toLitreMultiplier = [_toLitreMultipliers[[_volumeUnitsArray indexOfObject:_volumeFromUnitSelected]] floatValue];
+    NSLog(@"%f", toLitreMultiplier);
+    return inputValue * toLitreMultiplier;
 }
-
--(float)convertFromMetre:(float)metreValue {
-    float fromMetreMultiplier = [_fromMetreMultipliers[[_distanceUnitsArray indexOfObject:_distanceToUnitSelected]] floatValue];
-    return metreValue * fromMetreMultiplier;
+-(float)convertFromLitre:(float)metreValue {
+    float fromLitreMultiplier = [_fromLitreMultipliers[[_volumeUnitsArray indexOfObject:_volumeToUnitSelected]] floatValue];
+    return metreValue * fromLitreMultiplier;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (pickerView == fromUnit) {
-        _distanceFromUnitSelected = [_distanceUnitsArray objectAtIndex:row];
+        _volumeFromUnitSelected = [_volumeUnitsArray objectAtIndex:row];
     } else {
-        _distanceToUnitSelected = [_distanceUnitsArray objectAtIndex:row];
+        _volumeToUnitSelected = [_volumeUnitsArray objectAtIndex:row];
     }
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return _distanceUnitsArray.count;
+    return _volumeUnitsArray.count;
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -126,7 +125,7 @@ NSString *_distanceToUnitSelected;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return _distanceUnitsArray[row];
+    return _volumeUnitsArray[row];
 }
 
 - (void)dismissKeyboard {
@@ -153,4 +152,5 @@ NSString *_distanceToUnitSelected;
  */
 
 @end
+
 
