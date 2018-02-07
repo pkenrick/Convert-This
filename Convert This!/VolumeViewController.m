@@ -42,16 +42,26 @@ NSString *_volumeToUnitSelected;
     toUnit.delegate = self;
     
     _volumeUnitsArray = @[
-                            @"Millilitres",
-                            @"Litres",
-                            @"Teaspoons",
-                            @"Tablespoons",
-                            @"Cups",
-                            @"Pints",
-                            @"Gallons"
-                            ];
+                          @"Cubic Millimetres",
+                          @"Cubic Centimetres",
+                          @"Cubic Metres",
+                          @"Cubic Inches",
+                          @"Cubic Feet",
+                          @"Millilitres",
+                          @"Litres",
+                          @"Teaspoons",
+                          @"Tablespoons",
+                          @"Cups",
+                          @"Pints",
+                          @"Gallons"
+                          ];
     
     _toLitreMultipliers = @[
+                            @0.000001f,
+                            @0.001f,
+                            @1000.0f,
+                            @0.0163871f,
+                            @28.3168f,
                             @0.001f,
                             @1.0f,
                             @0.00591939f,
@@ -62,6 +72,11 @@ NSString *_volumeToUnitSelected;
                             ];
     
     _fromLitreMultipliers = @[
+                              @1000000,
+                              @1000,
+                              @0.001,
+                              @61.02361,
+                              @0.03531472,
                               @1000,
                               @1.0f,
                               @168.936326,
@@ -84,25 +99,30 @@ NSString *_volumeToUnitSelected;
     }
     
     float litreResult = [self convertToLitre:[inputField.text floatValue]];
-    NSLog(@"%f", litreResult);
     float finalResult = [self convertFromLitre:litreResult];
-    NSLog(@"%f", finalResult);
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [formatter setMaximumFractionDigits:2];
-    [formatter setRoundingMode:NSNumberFormatterRoundUp];
+    [formatter setMinimumFractionDigits:2];
+    if (finalResult >= 1) { [formatter setMaximumFractionDigits:2]; }
+    if (finalResult < 1) { [formatter setMaximumFractionDigits:4]; }
+    [formatter setRoundingMode:NSNumberFormatterRoundHalfEven];
     
     NSNumber *finalResultNumber = [NSNumber numberWithFloat:finalResult];
-    NSString *formattedResult = [NSString stringWithFormat:@"%@\n%@", [formatter stringFromNumber:finalResultNumber], _volumeToUnitSelected];
+    NSString *formattedResult;
+    if (finalResult < 0.00005) {
+        formattedResult = [NSString stringWithFormat:@"< 0.00005\n%@", _volumeToUnitSelected];
+    } else {
+        formattedResult = [NSString stringWithFormat:@"%@\n%@", [formatter stringFromNumber:finalResultNumber], _volumeToUnitSelected];
+    }
     resultLabel.text = formattedResult;
 }
 
 - (float)convertToLitre:(float)inputValue {
     float toLitreMultiplier = [_toLitreMultipliers[[_volumeUnitsArray indexOfObject:_volumeFromUnitSelected]] floatValue];
-    NSLog(@"%f", toLitreMultiplier);
     return inputValue * toLitreMultiplier;
 }
+
 -(float)convertFromLitre:(float)metreValue {
     float fromLitreMultiplier = [_fromLitreMultipliers[[_volumeUnitsArray indexOfObject:_volumeToUnitSelected]] floatValue];
     return metreValue * fromLitreMultiplier;

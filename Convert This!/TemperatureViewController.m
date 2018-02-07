@@ -45,6 +45,15 @@ NSString *_tempToUnitSelected;
                         ];
 }
 
+- (IBAction)toggleSign:(id)sender {
+    if ([inputField.text floatValue] > 1) {
+        inputField.text = [NSString stringWithFormat:@"-%@",inputField.text];
+    } else {
+        inputField.text = [inputField.text substringFromIndex:1];
+    }
+//    inputField.text = [NSString stringWithFormat:@"%f", [inputField.text floatValue] * -1];
+}
+
 - (IBAction)userDidPressConvert:(id)sender {
     
     if (_tempFromUnitSelected == nil) {
@@ -60,7 +69,8 @@ NSString *_tempToUnitSelected;
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     [formatter setMaximumFractionDigits:2];
-    [formatter setRoundingMode:NSNumberFormatterRoundUp];
+    [formatter setMinimumFractionDigits:2];
+    [formatter setRoundingMode:NSNumberFormatterRoundHalfEven];
     
     NSNumber *finalResultNumber = [NSNumber numberWithFloat:finalResult];
     NSString *formattedResult = [NSString stringWithFormat:@"%@\n%@", [formatter stringFromNumber:finalResultNumber], _tempToUnitSelected];

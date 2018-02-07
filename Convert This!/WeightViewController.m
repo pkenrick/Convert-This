@@ -88,11 +88,18 @@ NSString *_toUnitSelected;
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [formatter setMaximumFractionDigits:2];
-    [formatter setRoundingMode:NSNumberFormatterRoundUp];
+    [formatter setMinimumFractionDigits:2];
+    if (finalResult >= 1) { [formatter setMaximumFractionDigits:2]; }
+    if (finalResult < 1) { [formatter setMaximumFractionDigits:4]; }
+    [formatter setRoundingMode:NSNumberFormatterRoundHalfEven];
     
     NSNumber *finalResultNumber = [NSNumber numberWithFloat:finalResult];
-    NSString *formattedResult = [NSString stringWithFormat:@"%@\n%@", [formatter stringFromNumber:finalResultNumber], _toUnitSelected];
+    NSString *formattedResult;
+    if (finalResult < 0.00005) {
+        formattedResult = [NSString stringWithFormat:@"< 0.00005\n%@", _toUnitSelected];
+    } else {
+        formattedResult = [NSString stringWithFormat:@"%@\n%@", [formatter stringFromNumber:finalResultNumber], _toUnitSelected];
+    }
     resultLabel.text = formattedResult;
 }
 

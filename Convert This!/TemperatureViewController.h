@@ -18,6 +18,7 @@ IBOutlet UILabel *resultLabel;
 }
 
 -(IBAction)dismissView:(id)sender;
+-(IBAction)toggleSign:(id)sender;
 -(IBAction)userDidPressConvert:(id)sender;
 
 @end
