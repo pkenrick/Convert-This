@@ -46,7 +46,7 @@ NSString *_tempToUnitSelected;
 }
 
 - (IBAction)toggleSign:(id)sender {
-    if ([inputField.text floatValue] > 1) {
+    if ([inputField.text floatValue] > 0) {
         inputField.text = [NSString stringWithFormat:@"-%@",inputField.text];
     } else {
         inputField.text = [inputField.text substringFromIndex:1];

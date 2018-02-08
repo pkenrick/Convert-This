@@ -127,7 +127,7 @@
 				TargetAttributes = {
 					D94B010E20211D060017BFA3 = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -308,13 +308,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZBG63K7QDF;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 35HCKJ2CRR;
 				INFOPLIST_FILE = "Convert This!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-N95AS6R75.Convert-This-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pkenrick.convertthis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "14c418dd-11ea-4081-8da4-0f3aa1d82601";
+				PROVISIONING_PROFILE_SPECIFIER = ConvertThisProfile;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -322,13 +325,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZBG63K7QDF;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 35HCKJ2CRR;
 				INFOPLIST_FILE = "Convert This!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-N95AS6R75.Convert-This-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pkenrick.convertthis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "b18eb5a6-cf1c-41b9-a18d-49afc0fe8f9d";
+				PROVISIONING_PROFILE_SPECIFIER = ConvertThisProfile;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

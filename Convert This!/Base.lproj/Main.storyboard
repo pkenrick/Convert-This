@@ -34,7 +34,7 @@
                                 <rect key="frame" x="112.5" y="120" width="150" height="486.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ict-zM-Amn">
-                                        <rect key="frame" x="0.5" y="0.0" width="150" height="91"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="91"/>
                                         <color key="backgroundColor" red="0.82206808371977169" green="0.94664895002861682" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Weight"/>
                                         <connections>
@@ -42,7 +42,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLP-IA-O2y">
-                                        <rect key="frame" x="0.5" y="99" width="150" height="91"/>
+                                        <rect key="frame" x="0.0" y="99" width="150" height="91"/>
                                         <color key="backgroundColor" red="0.6161184358656655" green="0.8945449206498377" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Distance"/>
                                         <connections>
@@ -50,7 +50,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hg8-f1-MCk">
-                                        <rect key="frame" x="0.5" y="198" width="150" height="90.5"/>
+                                        <rect key="frame" x="0.0" y="198" width="150" height="90.5"/>
                                         <color key="backgroundColor" red="0.3917684909056135" green="0.82940650166091123" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Temperature"/>
                                         <connections>
@@ -58,7 +58,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZk-hc-uAe">
-                                        <rect key="frame" x="0.5" y="296.5" width="150" height="91"/>
+                                        <rect key="frame" x="0.0" y="296.5" width="150" height="91"/>
                                         <color key="backgroundColor" red="0.1876481076439801" green="0.73419080058073938" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Area">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -68,7 +68,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TS0-d0-fic">
-                                        <rect key="frame" x="0.5" y="395.5" width="150" height="91"/>
+                                        <rect key="frame" x="0.0" y="395.5" width="150" height="91"/>
                                         <color key="backgroundColor" red="0.046499499697429725" green="0.61020988436112389" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Voume">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
