@@ -46,12 +46,13 @@ NSString *_tempToUnitSelected;
 }
 
 - (IBAction)toggleSign:(id)sender {
-    if ([inputField.text floatValue] > 0) {
-        inputField.text = [NSString stringWithFormat:@"-%@",inputField.text];
-    } else {
-        inputField.text = [inputField.text substringFromIndex:1];
+    if (![inputField.text isEqualToString:@""]) {
+        if ([inputField.text floatValue] > 0) {
+            inputField.text = [NSString stringWithFormat:@"-%@",inputField.text];
+        } else {
+            inputField.text = [inputField.text substringFromIndex:1];
+        }
     }
-//    inputField.text = [NSString stringWithFormat:@"%f", [inputField.text floatValue] * -1];
 }
 
 - (IBAction)userDidPressConvert:(id)sender {
