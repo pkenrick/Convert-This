@@ -7,8 +7,12 @@
 //
 
 #import "WeightViewController.h"
+@import GoogleMobileAds;
 
-@interface WeightViewController ()
+
+@interface WeightViewController () <GADBannerViewDelegate>
+
+@property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
 
 @end
 
@@ -22,6 +26,13 @@ NSString *_toUnitSelected;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.bannerView.adUnitID = @"ca-app-pub-6253453252582106/6319633400";
+    self.bannerView.rootViewController = self;
+    GADRequest *request = [GADRequest request];
+    request.testDevices = @[ @"4c5fcbb920a15b4fa1928c8f18c25712" ];
+    [self.bannerView loadRequest:request];
+    self.bannerView.delegate = self;
     
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 35.0f)];
     toolbar.barStyle=UIBarStyleBlackOpaque;
@@ -71,6 +82,39 @@ NSString *_toUnitSelected;
                            @0.1574731
                            ];
 
+}
+
+/// Tells the delegate an ad request loaded an ad.
+- (void)adViewDidReceiveAd:(GADBannerView *)adView {
+    NSLog(@"adViewDidReceiveAd");
+}
+
+/// Tells the delegate an ad request failed.
+- (void)adView:(GADBannerView *)adView
+didFailToReceiveAdWithError:(GADRequestError *)error {
+    NSLog(@"adView:didFailToReceiveAdWithError: %@", [error localizedDescription]);
+}
+
+/// Tells the delegate that a full-screen view will be presented in response
+/// to the user clicking on an ad.
+- (void)adViewWillPresentScreen:(GADBannerView *)adView {
+    NSLog(@"adViewWillPresentScreen");
+}
+
+/// Tells the delegate that the full-screen view will be dismissed.
+- (void)adViewWillDismissScreen:(GADBannerView *)adView {
+    NSLog(@"adViewWillDismissScreen");
+}
+
+/// Tells the delegate that the full-screen view has been dismissed.
+- (void)adViewDidDismissScreen:(GADBannerView *)adView {
+    NSLog(@"adViewDidDismissScreen");
+}
+
+/// Tells the delegate that a user click will open another app (such as
+/// the App Store), backgrounding the current app.
+- (void)adViewWillLeaveApplication:(GADBannerView *)adView {
+    NSLog(@"adViewWillLeaveApplication");
 }
 
 - (IBAction)userDidPressConvert:(id)sender {

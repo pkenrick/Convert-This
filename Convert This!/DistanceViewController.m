@@ -7,8 +7,11 @@
 //
 
 #import "DistanceViewController.h"
+@import GoogleMobileAds;
 
-@interface DistanceViewController ()
+@interface DistanceViewController () <GADBannerViewDelegate>
+
+@property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
 
 @end
 
@@ -22,6 +25,13 @@ NSString *_distanceToUnitSelected;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.bannerView.adUnitID = @"ca-app-pub-6253453252582106/4945598711";
+    self.bannerView.rootViewController = self;
+    GADRequest *request = [GADRequest request];
+    request.testDevices = @[ @"4c5fcbb920a15b4fa1928c8f18c25712" ];
+    [self.bannerView loadRequest:request];
+    self.bannerView.delegate = self;
     
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 35.0f)];
     toolbar.barStyle=UIBarStyleBlackOpaque;

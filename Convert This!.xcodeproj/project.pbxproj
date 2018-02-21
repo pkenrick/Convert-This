@@ -7,12 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42E811DC02415C411D679C18 /* libPods-Convert This!.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1A52871106C48581651090 /* libPods-Convert This!.a */; };
+		D9310925203CB2FF00DAEF18 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = D9310924203CB2FF00DAEF18 /* title.png */; };
+		D931092C203CB3A000DAEF18 /* icons8-volume-50 (1).png in Resources */ = {isa = PBXBuildFile; fileRef = D9310927203CB39E00DAEF18 /* icons8-volume-50 (1).png */; };
+		D931092D203CB3A000DAEF18 /* icons8-ruler-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D9310928203CB39F00DAEF18 /* icons8-ruler-50.png */; };
+		D931092E203CB3A000DAEF18 /* icons8-weight-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D9310929203CB39F00DAEF18 /* icons8-weight-50.png */; };
+		D931092F203CB3A000DAEF18 /* icons8-temperature-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D931092A203CB39F00DAEF18 /* icons8-temperature-50.png */; };
+		D9310930203CB3A000DAEF18 /* icons8-resize-50 (1).png in Resources */ = {isa = PBXBuildFile; fileRef = D931092B203CB3A000DAEF18 /* icons8-resize-50 (1).png */; };
+		D9310932203E11BE00DAEF18 /* weightUnitsToKgs.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9310931203E11BE00DAEF18 /* weightUnitsToKgs.plist */; };
+		D9310935203E194D00DAEF18 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9310934203E194D00DAEF18 /* ViewController.m */; };
+		D9310938203E1B3300DAEF18 /* converterController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9310937203E1B3300DAEF18 /* converterController.m */; };
 		D934C2ED202749DC00218E51 /* DistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D934C2EC202749DC00218E51 /* DistanceViewController.m */; };
 		D934C2F0202772B600218E51 /* TemperatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D934C2EF202772B600218E51 /* TemperatureViewController.m */; };
 		D93810202027AC76002728FB /* AreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D938101F2027AC76002728FB /* AreaViewController.m */; };
 		D938102320292102002728FB /* VolumeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D938102220292102002728FB /* VolumeViewController.m */; };
 		D94B011420211D060017BFA3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D94B011320211D060017BFA3 /* AppDelegate.m */; };
-		D94B011720211D060017BFA3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D94B011620211D060017BFA3 /* ViewController.m */; };
 		D94B011A20211D060017BFA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D94B011820211D060017BFA3 /* Main.storyboard */; };
 		D94B011C20211D060017BFA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D94B011B20211D060017BFA3 /* Assets.xcassets */; };
 		D94B011F20211D060017BFA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D94B011D20211D060017BFA3 /* LaunchScreen.storyboard */; };
@@ -21,6 +30,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A243F1379D95FE05B6F637A /* Pods-Convert This!.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Convert This!.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Convert This!/Pods-Convert This!.debug.xcconfig"; sourceTree = "<group>"; };
+		8C1A52871106C48581651090 /* libPods-Convert This!.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Convert This!.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94A848663F8F426AD4B307A3 /* Pods-Convert This!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Convert This!.release.xcconfig"; path = "Pods/Target Support Files/Pods-Convert This!/Pods-Convert This!.release.xcconfig"; sourceTree = "<group>"; };
+		D9310924203CB2FF00DAEF18 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
+		D9310927203CB39E00DAEF18 /* icons8-volume-50 (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-volume-50 (1).png"; sourceTree = "<group>"; };
+		D9310928203CB39F00DAEF18 /* icons8-ruler-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ruler-50.png"; sourceTree = "<group>"; };
+		D9310929203CB39F00DAEF18 /* icons8-weight-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-weight-50.png"; sourceTree = "<group>"; };
+		D931092A203CB39F00DAEF18 /* icons8-temperature-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-temperature-50.png"; sourceTree = "<group>"; };
+		D931092B203CB3A000DAEF18 /* icons8-resize-50 (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-resize-50 (1).png"; sourceTree = "<group>"; };
+		D9310931203E11BE00DAEF18 /* weightUnitsToKgs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = weightUnitsToKgs.plist; sourceTree = "<group>"; };
+		D9310933203E194D00DAEF18 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D9310934203E194D00DAEF18 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D9310936203E1B3300DAEF18 /* converterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = converterController.h; sourceTree = "<group>"; };
+		D9310937203E1B3300DAEF18 /* converterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = converterController.m; sourceTree = "<group>"; };
 		D934C2EB202749DC00218E51 /* DistanceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DistanceViewController.h; sourceTree = "<group>"; };
 		D934C2EC202749DC00218E51 /* DistanceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DistanceViewController.m; sourceTree = "<group>"; };
 		D934C2EE202772B600218E51 /* TemperatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemperatureViewController.h; sourceTree = "<group>"; };
@@ -32,8 +55,6 @@
 		D94B010F20211D060017BFA3 /* Convert This!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Convert This!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D94B011220211D060017BFA3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D94B011320211D060017BFA3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D94B011520211D060017BFA3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D94B011620211D060017BFA3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D94B011920211D060017BFA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D94B011B20211D060017BFA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D94B011E20211D060017BFA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,17 +69,43 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42E811DC02415C411D679C18 /* libPods-Convert This!.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D265FDD7A4BE01D2EAD0E333 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5A243F1379D95FE05B6F637A /* Pods-Convert This!.debug.xcconfig */,
+				94A848663F8F426AD4B307A3 /* Pods-Convert This!.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D9310926203CB36900DAEF18 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				D931092B203CB3A000DAEF18 /* icons8-resize-50 (1).png */,
+				D9310928203CB39F00DAEF18 /* icons8-ruler-50.png */,
+				D931092A203CB39F00DAEF18 /* icons8-temperature-50.png */,
+				D9310927203CB39E00DAEF18 /* icons8-volume-50 (1).png */,
+				D9310929203CB39F00DAEF18 /* icons8-weight-50.png */,
+				D9310924203CB2FF00DAEF18 /* title.png */,
+			);
+			name = images;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		D94B010620211D060017BFA3 = {
 			isa = PBXGroup;
 			children = (
 				D94B011120211D060017BFA3 /* Convert This! */,
 				D94B011020211D060017BFA3 /* Products */,
+				D98B379820365084009018CD /* Frameworks */,
+				D265FDD7A4BE01D2EAD0E333 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,10 +120,9 @@
 		D94B011120211D060017BFA3 /* Convert This! */ = {
 			isa = PBXGroup;
 			children = (
+				D9310926203CB36900DAEF18 /* images */,
 				D94B011220211D060017BFA3 /* AppDelegate.h */,
 				D94B011320211D060017BFA3 /* AppDelegate.m */,
-				D94B011520211D060017BFA3 /* ViewController.h */,
-				D94B011620211D060017BFA3 /* ViewController.m */,
 				D94B011820211D060017BFA3 /* Main.storyboard */,
 				D938102120292102002728FB /* VolumeViewController.h */,
 				D938102220292102002728FB /* VolumeViewController.m */,
@@ -91,9 +137,22 @@
 				D94B011B20211D060017BFA3 /* Assets.xcassets */,
 				D94B011D20211D060017BFA3 /* LaunchScreen.storyboard */,
 				D94B012020211D060017BFA3 /* Info.plist */,
+				D9310931203E11BE00DAEF18 /* weightUnitsToKgs.plist */,
 				D94B012120211D060017BFA3 /* main.m */,
+				D9310933203E194D00DAEF18 /* ViewController.h */,
+				D9310934203E194D00DAEF18 /* ViewController.m */,
+				D9310936203E1B3300DAEF18 /* converterController.h */,
+				D9310937203E1B3300DAEF18 /* converterController.m */,
 			);
 			path = "Convert This!";
+			sourceTree = "<group>";
+		};
+		D98B379820365084009018CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C1A52871106C48581651090 /* libPods-Convert This!.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,9 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D94B012520211D060017BFA3 /* Build configuration list for PBXNativeTarget "Convert This!" */;
 			buildPhases = (
+				99FB894FE107E236EA3A5BEC /* [CP] Check Pods Manifest.lock */,
 				D94B010B20211D060017BFA3 /* Sources */,
 				D94B010C20211D060017BFA3 /* Frameworks */,
 				D94B010D20211D060017BFA3 /* Resources */,
+				12BAC1E1B775CAA11800E2B5 /* [CP] Embed Pods Frameworks */,
+				85CDC9AADBBE6DA59407DC54 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -154,13 +216,71 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9310932203E11BE00DAEF18 /* weightUnitsToKgs.plist in Resources */,
+				D931092C203CB3A000DAEF18 /* icons8-volume-50 (1).png in Resources */,
+				D9310930203CB3A000DAEF18 /* icons8-resize-50 (1).png in Resources */,
 				D94B011F20211D060017BFA3 /* LaunchScreen.storyboard in Resources */,
 				D94B011C20211D060017BFA3 /* Assets.xcassets in Resources */,
+				D9310925203CB2FF00DAEF18 /* title.png in Resources */,
 				D94B011A20211D060017BFA3 /* Main.storyboard in Resources */,
+				D931092F203CB3A000DAEF18 /* icons8-temperature-50.png in Resources */,
+				D931092E203CB3A000DAEF18 /* icons8-weight-50.png in Resources */,
+				D931092D203CB3A000DAEF18 /* icons8-ruler-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		12BAC1E1B775CAA11800E2B5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Convert This!/Pods-Convert This!-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85CDC9AADBBE6DA59407DC54 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Convert This!/Pods-Convert This!-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99FB894FE107E236EA3A5BEC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Convert This!-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D94B010B20211D060017BFA3 /* Sources */ = {
@@ -169,10 +289,11 @@
 			files = (
 				D938102320292102002728FB /* VolumeViewController.m in Sources */,
 				D99E8F8B20213DD800A50B5F /* WeightViewController.m in Sources */,
-				D94B011720211D060017BFA3 /* ViewController.m in Sources */,
+				D9310935203E194D00DAEF18 /* ViewController.m in Sources */,
 				D934C2ED202749DC00218E51 /* DistanceViewController.m in Sources */,
 				D934C2F0202772B600218E51 /* TemperatureViewController.m in Sources */,
 				D94B012220211D060017BFA3 /* main.m in Sources */,
+				D9310938203E1B3300DAEF18 /* converterController.m in Sources */,
 				D93810202027AC76002728FB /* AreaViewController.m in Sources */,
 				D94B011420211D060017BFA3 /* AppDelegate.m in Sources */,
 			);
@@ -306,33 +427,49 @@
 		};
 		D94B012620211D060017BFA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A243F1379D95FE05B6F637A /* Pods-Convert This!.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 35HCKJ2CRR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Convert\\ This!",
+					"$(PROJECT_DIR)/Convert\\ This!",
+					"$(PROJECT_DIR)/Convert\\ This!",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Convert This!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pkenrick.convertthis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "14c418dd-11ea-4081-8da4-0f3aa1d82601";
-				PROVISIONING_PROFILE_SPECIFIER = ConvertThisProfile;
+				PROVISIONING_PROFILE = "9d69c896-5065-4435-bc11-6f9daac6bbc4";
+				PROVISIONING_PROFILE_SPECIFIER = firstprofile;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		D94B012720211D060017BFA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94A848663F8F426AD4B307A3 /* Pods-Convert This!.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 35HCKJ2CRR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Convert\\ This!",
+					"$(PROJECT_DIR)/Convert\\ This!",
+					"$(PROJECT_DIR)/Convert\\ This!",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Convert This!/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pkenrick.convertthis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b18eb5a6-cf1c-41b9-a18d-49afc0fe8f9d";
+				PROVISIONING_PROFILE = "14c418dd-11ea-4081-8da4-0f3aa1d82601";
 				PROVISIONING_PROFILE_SPECIFIER = ConvertThisProfile;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

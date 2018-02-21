@@ -7,16 +7,18 @@
 //
 
 #import "AppDelegate.h"
+@import GoogleMobileAds;
 
 @interface AppDelegate ()
 
 @end
 
+
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // Initialize Google Mobile Ads SDK
+    [GADMobileAds configureWithApplicationID:@"ca-app-pub-6253453252582106~4076920936"];
     return YES;
 }
 

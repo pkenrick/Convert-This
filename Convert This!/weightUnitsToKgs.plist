@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Stone</key>
+	<real>6.35029</real>
+	<key>Pounds</key>
+	<real>0.453592</real>
+	<key>Ounces</key>
+	<real>0.0283495</real>
+	<key>Tonnes</key>
+	<real>1000</real>
+	<key>Kilograms</key>
+	<integer>1</integer>
+	<key>Grams</key>
+	<real>0.001</real>
+	<key>Milligrams</key>
+	<real>1e-06</real>
+</dict>
+</plist>
