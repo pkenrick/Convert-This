@@ -26,15 +26,41 @@ UINavigationController *navigationController;
     GADRequest *request = [GADRequest request];
     request.testDevices = @[ @"4c5fcbb920a15b4fa1928c8f18c25712" ];
     [self.bannerView loadRequest:request];
-    self.bannerView.delegate = self;
-    
-//    navigationController = [[UINavigationController alloc] init];
-//    navigationController rootViewCon
+    self.bannerView.delegate = self;    
 }
 
--(IBAction)weightButtonTapped:(id)sender {
-    NSLog(@"lskdjflskdjlsdjf");
-}
+///// Tells the delegate an ad request loaded an ad.
+//- (void)adViewDidReceiveAd:(GADBannerView *)adView {
+//    NSLog(@"adViewDidReceiveAd");
+//}
+//
+///// Tells the delegate an ad request failed.
+//- (void)adView:(GADBannerView *)adView
+//didFailToReceiveAdWithError:(GADRequestError *)error {
+//    NSLog(@"adView:didFailToReceiveAdWithError: %@", [error localizedDescription]);
+//}
+//
+///// Tells the delegate that a full-screen view will be presented in response
+///// to the user clicking on an ad.
+//- (void)adViewWillPresentScreen:(GADBannerView *)adView {
+//    NSLog(@"adViewWillPresentScreen");
+//}
+//
+///// Tells the delegate that the full-screen view will be dismissed.
+//- (void)adViewWillDismissScreen:(GADBannerView *)adView {
+//    NSLog(@"adViewWillDismissScreen");
+//}
+//
+///// Tells the delegate that the full-screen view has been dismissed.
+//- (void)adViewDidDismissScreen:(GADBannerView *)adView {
+//    NSLog(@"adViewDidDismissScreen");
+//}
+//
+///// Tells the delegate that a user click will open another app (such as
+///// the App Store), backgrounding the current app.
+//- (void)adViewWillLeaveApplication:(GADBannerView *)adView {
+//    NSLog(@"adViewWillLeaveApplication");
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
