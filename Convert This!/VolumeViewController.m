@@ -15,11 +15,10 @@
 
 @end
 
-NSArray *_volumeUnitsArray;
-NSArray *_toLitreMultipliers;
-NSArray *_fromLitreMultipliers;
 NSString *_volumeFromUnitSelected;
 NSString *_volumeToUnitSelected;
+
+NSDictionary *_volumeUnitsToCubicMetres;
 
 @implementation VolumeViewController
 
@@ -51,61 +50,24 @@ NSString *_volumeToUnitSelected;
     fromUnit.delegate = self;
     toUnit.delegate = self;
     
-    _volumeUnitsArray = @[
-                          @"Cubic Millimetres",
-                          @"Cubic Centimetres",
-                          @"Cubic Metres",
-                          @"Cubic Inches",
-                          @"Cubic Feet",
-                          @"Millilitres",
-                          @"Litres",
-                          @"Teaspoons",
-                          @"Tablespoons",
-                          @"Cups",
-                          @"Pints",
-                          @"Gallons"
-                          ];
+    NSString *plistCatPath = [[NSBundle mainBundle] pathForResource:@"volumeUnitsToCubicMetres" ofType:@"plist"];
+    _volumeUnitsToCubicMetres = [NSDictionary dictionaryWithContentsOfFile:plistCatPath];
     
-    _toLitreMultipliers = @[
-                            @0.000001f,
-                            @0.001f,
-                            @1000.0f,
-                            @0.0163871f,
-                            @28.3168f,
-                            @0.001f,
-                            @1.0f,
-                            @0.00591939f,
-                            @0.0177582f,
-                            @0.236588f,
-                            @0.568261f,
-                            @4.54609
-                            ];
-    
-    _fromLitreMultipliers = @[
-                              @1000000,
-                              @1000,
-                              @0.001,
-                              @61.02361,
-                              @0.03531472,
-                              @1000,
-                              @1.0f,
-                              @168.936326,
-                              @56.312014,
-                              @4.226757,
-                              @1.759755,
-                              @0.219969
-                              ];
-    
+//    for(NSString *key in [_volumeUnitsToCubicMetres allKeys]) {
+//        NSLog(@"%@: %f", key, [[_volumeUnitsToCubicMetres objectForKey:key] floatValue]);
+//    }
 }
 
 - (IBAction)userDidPressConvert:(id)sender {
     
+    NSArray *sortedKeys = [[_volumeUnitsToCubicMetres allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    
     if (_volumeFromUnitSelected == nil) {
-        _volumeFromUnitSelected = [_volumeUnitsArray firstObject];
+        _volumeFromUnitSelected = [sortedKeys firstObject];
     }
     
     if (_volumeFromUnitSelected == nil) {
-        _volumeFromUnitSelected = [_volumeUnitsArray firstObject];
+        _volumeFromUnitSelected = [sortedKeys firstObject];
     }
     
     float litreResult = [self convertToLitre:[inputField.text floatValue]];
@@ -129,25 +91,26 @@ NSString *_volumeToUnitSelected;
 }
 
 - (float)convertToLitre:(float)inputValue {
-    float toLitreMultiplier = [_toLitreMultipliers[[_volumeUnitsArray indexOfObject:_volumeFromUnitSelected]] floatValue];
-    return inputValue * toLitreMultiplier;
+    float multiplier = [[_volumeUnitsToCubicMetres valueForKey:_volumeFromUnitSelected] floatValue];
+    return inputValue * multiplier;
 }
 
 -(float)convertFromLitre:(float)metreValue {
-    float fromLitreMultiplier = [_fromLitreMultipliers[[_volumeUnitsArray indexOfObject:_volumeToUnitSelected]] floatValue];
-    return metreValue * fromLitreMultiplier;
+    float divisor = [[_volumeUnitsToCubicMetres valueForKey:_volumeToUnitSelected] floatValue];
+    return metreValue / divisor;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    NSArray *sortedKeys = [[_volumeUnitsToCubicMetres allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     if (pickerView == fromUnit) {
-        _volumeFromUnitSelected = [_volumeUnitsArray objectAtIndex:row];
+        _volumeFromUnitSelected = [sortedKeys objectAtIndex:row];
     } else {
-        _volumeToUnitSelected = [_volumeUnitsArray objectAtIndex:row];
+        _volumeToUnitSelected = [sortedKeys objectAtIndex:row];
     }
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return _volumeUnitsArray.count;
+    return _volumeUnitsToCubicMetres.count;
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -155,7 +118,8 @@ NSString *_volumeToUnitSelected;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return _volumeUnitsArray[row];
+    NSArray *sortedKeys = [[_volumeUnitsToCubicMetres allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    return sortedKeys[row];
 }
 
 - (void)dismissKeyboard {

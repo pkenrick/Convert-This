@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Square Miles</key>
+	<integer>2590000</integer>
+	<key>Acres</key>
+	<real>4046.86</real>
+	<key>Square Feet</key>
+	<real>0.092903</real>
+	<key>Square Inches</key>
+	<real>0.00064516</real>
+	<key>Square Kilometres</key>
+	<integer>1000000</integer>
+	<key>Hectares</key>
+	<integer>10000</integer>
+	<key>Square Metres</key>
+	<integer>1</integer>
+	<key>Square Centimetres</key>
+	<real>0.0001</real>
+	<key>Square Millimetres</key>
+	<real>1e-06</real>
+</dict>
+</plist>

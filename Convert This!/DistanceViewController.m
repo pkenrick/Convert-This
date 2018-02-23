@@ -15,11 +15,10 @@
 
 @end
 
-NSArray *_distanceUnitsArray;
-NSArray *_toMetreMultipliers;
-NSArray *_fromMetreMultipliers;
 NSString *_distanceFromUnitSelected;
 NSString *_distanceToUnitSelected;
+
+NSDictionary *_distanceUnitsToMetres;
 
 @implementation DistanceViewController
 
@@ -51,49 +50,24 @@ NSString *_distanceToUnitSelected;
     fromUnit.delegate = self;
     toUnit.delegate = self;
     
-    _distanceUnitsArray = @[
-                    @"Millimetres",
-                    @"Centimetres",
-                    @"Metres",
-                    @"Kilometres",
-                    @"Inches",
-                    @"Feet",
-                    @"Yards",
-                    @"Miles"
-                    ];
+    NSString *plistCatPath = [[NSBundle mainBundle] pathForResource:@"distanceUnitsToMetres" ofType:@"plist"];
+    _distanceUnitsToMetres = [NSDictionary dictionaryWithContentsOfFile:plistCatPath];
     
-    _toMetreMultipliers = @[
-                         @0.001f,
-                         @0.01f,
-                         @1.0f,
-                         @1000.0f,
-                         @0.0254f,
-                         @0.3048f,
-                         @0.9144f,
-                         @1609.34
-                         ];
-    
-    _fromMetreMultipliers = @[
-                           @1000,
-                           @100,
-                           @1.0f,
-                           @0.001,
-                           @39.3701,
-                           @3.28083,
-                           @1.09361,
-                           @0.000621371
-                           ];
-    
+//    for(NSString *key in [_distanceUnitsToMetres allKeys]) {
+//        NSLog(@"%@: %f", key, [[_distanceUnitsToMetres objectForKey:key] floatValue]);
+//    }
 }
 
 - (IBAction)userDidPressConvert:(id)sender {
     
+    NSArray *sortedKeys = [[_distanceUnitsToMetres allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    
     if (_distanceFromUnitSelected == nil) {
-        _distanceFromUnitSelected = [_distanceUnitsArray firstObject];
+        _distanceFromUnitSelected = [sortedKeys firstObject];
     }
     
     if (_distanceToUnitSelected == nil) {
-        _distanceToUnitSelected = [_distanceUnitsArray firstObject];
+        _distanceToUnitSelected = [sortedKeys firstObject];
     }
     
     float metreResult = [self convertToMetre:[inputField.text floatValue]];
@@ -117,25 +91,26 @@ NSString *_distanceToUnitSelected;
 }
 
 - (float)convertToMetre:(float)inputValue {
-    float toMetreMultiplier = [_toMetreMultipliers[[_distanceUnitsArray indexOfObject:_distanceFromUnitSelected]] floatValue];
-    return inputValue * toMetreMultiplier;
+    float multiplier = [[_distanceUnitsToMetres valueForKey:_distanceFromUnitSelected] floatValue];
+    return inputValue * multiplier;
 }
 
 -(float)convertFromMetre:(float)metreValue {
-    float fromMetreMultiplier = [_fromMetreMultipliers[[_distanceUnitsArray indexOfObject:_distanceToUnitSelected]] floatValue];
-    return metreValue * fromMetreMultiplier;
+    float divisor = [[_distanceUnitsToMetres valueForKey:_distanceToUnitSelected] floatValue];
+    return metreValue / divisor;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    NSArray *sortedKeys = [[_distanceUnitsToMetres allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     if (pickerView == fromUnit) {
-        _distanceFromUnitSelected = [_distanceUnitsArray objectAtIndex:row];
+        _distanceFromUnitSelected = [sortedKeys objectAtIndex:row];
     } else {
-        _distanceToUnitSelected = [_distanceUnitsArray objectAtIndex:row];
+        _distanceToUnitSelected = [sortedKeys objectAtIndex:row];
     }
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return _distanceUnitsArray.count;
+    return _distanceUnitsToMetres.count;
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -143,7 +118,8 @@ NSString *_distanceToUnitSelected;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return _distanceUnitsArray[row];
+    NSArray *sortedKeys = [[_distanceUnitsToMetres allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    return [sortedKeys objectAtIndex: row];
 }
 
 - (void)dismissKeyboard {

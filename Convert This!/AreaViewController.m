@@ -15,11 +15,10 @@
 
 @end
 
-NSArray *_areaUnitsArray;
-NSArray *_toSquareMetreMultipliers;
-NSArray *_fromSquareMetreMultipliers;
 NSString *_areaFromUnitSelected;
 NSString *_areaToUnitSelected;
+
+NSDictionary *_areaUnitsToSquareMetres;
 
 @implementation AreaViewController
 
@@ -51,52 +50,24 @@ NSString *_areaToUnitSelected;
     fromUnit.delegate = self;
     toUnit.delegate = self;
     
-    _areaUnitsArray = @[
-                    @"Square Millimetres",
-                    @"Square Centimetres",
-                    @"Square Metres",
-                    @"Hectares",
-                    @"Square Kilometres",
-                    @"Square Inches",
-                    @"Square Feet",
-                    @"Acres",
-                    @"Square Miles"
-                    ];
+    NSString *plistCatPath = [[NSBundle mainBundle] pathForResource:@"areaUnitsToSquareMetres" ofType:@"plist"];
+    _areaUnitsToSquareMetres = [NSDictionary dictionaryWithContentsOfFile:plistCatPath];
     
-    _toSquareMetreMultipliers = @[
-                         @0.000001f,
-                         @0.0001f,
-                         @1.0f,
-                         @10000.0f,
-                         @1000000.0f,
-                         @0.00064516f,
-                         @0.092903f,
-                         @4046.86f,
-                         @2590000.0f
-                         ];
-    
-    _fromSquareMetreMultipliers = @[
-                           @1000000.0f,
-                           @10000.0f,
-                           @1.0f,
-                           @0.0001f,
-                           @0.000001f,
-                           @1550.0031f,
-                           @10.7639151f,
-                           @0.00024711f,
-                           @0.000000386102f
-                           ];
-    
+//    for(NSString *key in [_areaUnitsToSquareMetres allKeys]) {
+//        NSLog(@"%@: %f", key, [[_areaUnitsToSquareMetres objectForKey:key] floatValue]);
+//    }
 }
 
 - (IBAction)userDidPressConvert:(id)sender {
     
+    NSArray *sortedKeys = [[_areaUnitsToSquareMetres allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    
     if (_areaFromUnitSelected == nil) {
-        _areaFromUnitSelected = [_areaUnitsArray firstObject];
+        _areaFromUnitSelected = [sortedKeys firstObject];
     }
     
     if (_areaToUnitSelected == nil) {
-        _areaToUnitSelected = [_areaUnitsArray firstObject];
+        _areaToUnitSelected = [sortedKeys firstObject];
     }
     
     float metreResult = [self convertToMetre:[inputField.text floatValue]];
@@ -120,25 +91,26 @@ NSString *_areaToUnitSelected;
 }
 
 - (float)convertToMetre:(float)inputValue {
-    float toSquareMetreMultiplier = [_toSquareMetreMultipliers[[_areaUnitsArray indexOfObject:_areaFromUnitSelected]] floatValue];
-    return inputValue * toSquareMetreMultiplier;
+    float multiplier = [[_areaUnitsToSquareMetres valueForKey:_areaFromUnitSelected] floatValue];
+    return inputValue * multiplier;
 }
 
--(float)convertFromMetre:(float)kgValue {
-    float fromSquareMetreMultiplier = [_fromSquareMetreMultipliers[[_areaUnitsArray indexOfObject:_areaToUnitSelected]] floatValue];
-    return kgValue * fromSquareMetreMultiplier;
+-(float)convertFromMetre:(float)metreValue {
+    float divisor = [[_areaUnitsToSquareMetres valueForKey:_areaToUnitSelected] floatValue];
+    return metreValue / divisor;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    NSArray *sortedKeys = [[_areaUnitsToSquareMetres allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     if (pickerView == fromUnit) {
-        _areaFromUnitSelected = [_areaUnitsArray objectAtIndex:row];
+        _areaFromUnitSelected = [sortedKeys objectAtIndex:row];
     } else {
-        _areaToUnitSelected = [_areaUnitsArray objectAtIndex:row];
+        _areaToUnitSelected = [sortedKeys objectAtIndex:row];
     }
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return _areaUnitsArray.count;
+    return _areaUnitsToSquareMetres.count;
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -146,7 +118,8 @@ NSString *_areaToUnitSelected;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return _areaUnitsArray[row];
+    NSArray *sortedKeys = [[_areaUnitsToSquareMetres allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    return [sortedKeys objectAtIndex:row];
 }
 
 - (void)dismissKeyboard {

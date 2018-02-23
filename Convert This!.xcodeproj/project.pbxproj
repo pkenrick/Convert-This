@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		42E811DC02415C411D679C18 /* libPods-Convert This!.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1A52871106C48581651090 /* libPods-Convert This!.a */; };
 		D9310925203CB2FF00DAEF18 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = D9310924203CB2FF00DAEF18 /* title.png */; };
-		D931092C203CB3A000DAEF18 /* icons8-volume-50 (1).png in Resources */ = {isa = PBXBuildFile; fileRef = D9310927203CB39E00DAEF18 /* icons8-volume-50 (1).png */; };
-		D931092D203CB3A000DAEF18 /* icons8-ruler-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D9310928203CB39F00DAEF18 /* icons8-ruler-50.png */; };
-		D931092E203CB3A000DAEF18 /* icons8-weight-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D9310929203CB39F00DAEF18 /* icons8-weight-50.png */; };
-		D931092F203CB3A000DAEF18 /* icons8-temperature-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D931092A203CB39F00DAEF18 /* icons8-temperature-50.png */; };
-		D9310930203CB3A000DAEF18 /* icons8-resize-50 (1).png in Resources */ = {isa = PBXBuildFile; fileRef = D931092B203CB3A000DAEF18 /* icons8-resize-50 (1).png */; };
 		D9310932203E11BE00DAEF18 /* weightUnitsToKgs.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9310931203E11BE00DAEF18 /* weightUnitsToKgs.plist */; };
 		D9310935203E194D00DAEF18 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9310934203E194D00DAEF18 /* ViewController.m */; };
+		D931093A203F4C6F00DAEF18 /* distanceUnitsToMetres.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9310939203F4C6F00DAEF18 /* distanceUnitsToMetres.plist */; };
+		D931093C203F4F0400DAEF18 /* areaUnitsToSquareMetres.plist in Resources */ = {isa = PBXBuildFile; fileRef = D931093B203F4F0400DAEF18 /* areaUnitsToSquareMetres.plist */; };
+		D931093E203F536C00DAEF18 /* volumeUnitsToCubicMetres.plist in Resources */ = {isa = PBXBuildFile; fileRef = D931093D203F536C00DAEF18 /* volumeUnitsToCubicMetres.plist */; };
+		D9310940203F971500DAEF18 /* icons8-weight-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D931093F203F971400DAEF18 /* icons8-weight-35.png */; };
+		D9310945203F97CC00DAEF18 /* icons8-resize-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9310941203F97C800DAEF18 /* icons8-resize-35.png */; };
+		D9310946203F97CC00DAEF18 /* icons8-ruler-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9310942203F97C800DAEF18 /* icons8-ruler-35.png */; };
+		D9310947203F97CC00DAEF18 /* icons8-temperature-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9310943203F97CA00DAEF18 /* icons8-temperature-35.png */; };
+		D9310948203F97CC00DAEF18 /* icons8-volume-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9310944203F97CB00DAEF18 /* icons8-volume-35.png */; };
 		D934C2ED202749DC00218E51 /* DistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D934C2EC202749DC00218E51 /* DistanceViewController.m */; };
 		D934C2F0202772B600218E51 /* TemperatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D934C2EF202772B600218E51 /* TemperatureViewController.m */; };
 		D93810202027AC76002728FB /* AreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D938101F2027AC76002728FB /* AreaViewController.m */; };
@@ -33,14 +36,17 @@
 		8C1A52871106C48581651090 /* libPods-Convert This!.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Convert This!.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94A848663F8F426AD4B307A3 /* Pods-Convert This!.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Convert This!.release.xcconfig"; path = "Pods/Target Support Files/Pods-Convert This!/Pods-Convert This!.release.xcconfig"; sourceTree = "<group>"; };
 		D9310924203CB2FF00DAEF18 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
-		D9310927203CB39E00DAEF18 /* icons8-volume-50 (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-volume-50 (1).png"; sourceTree = "<group>"; };
-		D9310928203CB39F00DAEF18 /* icons8-ruler-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ruler-50.png"; sourceTree = "<group>"; };
-		D9310929203CB39F00DAEF18 /* icons8-weight-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-weight-50.png"; sourceTree = "<group>"; };
-		D931092A203CB39F00DAEF18 /* icons8-temperature-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-temperature-50.png"; sourceTree = "<group>"; };
-		D931092B203CB3A000DAEF18 /* icons8-resize-50 (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-resize-50 (1).png"; sourceTree = "<group>"; };
 		D9310931203E11BE00DAEF18 /* weightUnitsToKgs.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = weightUnitsToKgs.plist; sourceTree = "<group>"; };
 		D9310933203E194D00DAEF18 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D9310934203E194D00DAEF18 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D9310939203F4C6F00DAEF18 /* distanceUnitsToMetres.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = distanceUnitsToMetres.plist; sourceTree = "<group>"; };
+		D931093B203F4F0400DAEF18 /* areaUnitsToSquareMetres.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = areaUnitsToSquareMetres.plist; sourceTree = "<group>"; };
+		D931093D203F536C00DAEF18 /* volumeUnitsToCubicMetres.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = volumeUnitsToCubicMetres.plist; sourceTree = "<group>"; };
+		D931093F203F971400DAEF18 /* icons8-weight-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-weight-35.png"; sourceTree = "<group>"; };
+		D9310941203F97C800DAEF18 /* icons8-resize-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-resize-35.png"; sourceTree = "<group>"; };
+		D9310942203F97C800DAEF18 /* icons8-ruler-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ruler-35.png"; sourceTree = "<group>"; };
+		D9310943203F97CA00DAEF18 /* icons8-temperature-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-temperature-35.png"; sourceTree = "<group>"; };
+		D9310944203F97CB00DAEF18 /* icons8-volume-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-volume-35.png"; sourceTree = "<group>"; };
 		D934C2EB202749DC00218E51 /* DistanceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DistanceViewController.h; sourceTree = "<group>"; };
 		D934C2EC202749DC00218E51 /* DistanceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DistanceViewController.m; sourceTree = "<group>"; };
 		D934C2EE202772B600218E51 /* TemperatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemperatureViewController.h; sourceTree = "<group>"; };
@@ -85,11 +91,11 @@
 		D9310926203CB36900DAEF18 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				D931092B203CB3A000DAEF18 /* icons8-resize-50 (1).png */,
-				D9310928203CB39F00DAEF18 /* icons8-ruler-50.png */,
-				D931092A203CB39F00DAEF18 /* icons8-temperature-50.png */,
-				D9310927203CB39E00DAEF18 /* icons8-volume-50 (1).png */,
-				D9310929203CB39F00DAEF18 /* icons8-weight-50.png */,
+				D9310941203F97C800DAEF18 /* icons8-resize-35.png */,
+				D9310942203F97C800DAEF18 /* icons8-ruler-35.png */,
+				D9310943203F97CA00DAEF18 /* icons8-temperature-35.png */,
+				D9310944203F97CB00DAEF18 /* icons8-volume-35.png */,
+				D931093F203F971400DAEF18 /* icons8-weight-35.png */,
 				D9310924203CB2FF00DAEF18 /* title.png */,
 			);
 			name = images;
@@ -135,6 +141,9 @@
 				D94B011D20211D060017BFA3 /* LaunchScreen.storyboard */,
 				D94B012020211D060017BFA3 /* Info.plist */,
 				D9310931203E11BE00DAEF18 /* weightUnitsToKgs.plist */,
+				D9310939203F4C6F00DAEF18 /* distanceUnitsToMetres.plist */,
+				D931093B203F4F0400DAEF18 /* areaUnitsToSquareMetres.plist */,
+				D931093D203F536C00DAEF18 /* volumeUnitsToCubicMetres.plist */,
 				D94B012120211D060017BFA3 /* main.m */,
 				D9310933203E194D00DAEF18 /* ViewController.h */,
 				D9310934203E194D00DAEF18 /* ViewController.m */,
@@ -211,16 +220,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D931093C203F4F0400DAEF18 /* areaUnitsToSquareMetres.plist in Resources */,
+				D931093E203F536C00DAEF18 /* volumeUnitsToCubicMetres.plist in Resources */,
+				D9310947203F97CC00DAEF18 /* icons8-temperature-35.png in Resources */,
 				D9310932203E11BE00DAEF18 /* weightUnitsToKgs.plist in Resources */,
-				D931092C203CB3A000DAEF18 /* icons8-volume-50 (1).png in Resources */,
-				D9310930203CB3A000DAEF18 /* icons8-resize-50 (1).png in Resources */,
 				D94B011F20211D060017BFA3 /* LaunchScreen.storyboard in Resources */,
+				D9310946203F97CC00DAEF18 /* icons8-ruler-35.png in Resources */,
 				D94B011C20211D060017BFA3 /* Assets.xcassets in Resources */,
 				D9310925203CB2FF00DAEF18 /* title.png in Resources */,
 				D94B011A20211D060017BFA3 /* Main.storyboard in Resources */,
-				D931092F203CB3A000DAEF18 /* icons8-temperature-50.png in Resources */,
-				D931092E203CB3A000DAEF18 /* icons8-weight-50.png in Resources */,
-				D931092D203CB3A000DAEF18 /* icons8-ruler-50.png in Resources */,
+				D9310945203F97CC00DAEF18 /* icons8-resize-35.png in Resources */,
+				D931093A203F4C6F00DAEF18 /* distanceUnitsToMetres.plist in Resources */,
+				D9310948203F97CC00DAEF18 /* icons8-volume-35.png in Resources */,
+				D9310940203F971500DAEF18 /* icons8-weight-35.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

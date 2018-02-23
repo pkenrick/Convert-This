@@ -16,9 +16,6 @@
 
 @end
 
-//NSArray *_unitsArray;
-//NSArray *_toKgMultipliers;
-//NSArray *_fromKgMultipliers;
 NSString *_fromUnitSelected;
 NSString *_toUnitSelected;
 
@@ -57,39 +54,9 @@ NSDictionary *_weightUnitsToKgs;
     NSString *plistCatPath = [[NSBundle mainBundle] pathForResource:@"weightUnitsToKgs" ofType:@"plist"];
     _weightUnitsToKgs = [NSDictionary dictionaryWithContentsOfFile:plistCatPath];
     
-    for(NSString *key in [_weightUnitsToKgs allKeys]) {
-        NSLog(@"%@: %f", key, [[_weightUnitsToKgs objectForKey:key] floatValue]);
-    }
-    
-//    _unitsArray = @[
-//                    @"Milligrams",
-//                    @"Grams",
-//                    @"Kilograms",
-//                    @"Tonnes",
-//                    @"Ounces",
-//                    @"Pounds",
-//                    @"Stone"
-//                    ];
-//    
-//    _toKgMultipliers = @[
-//                         @0.000001f,
-//                         @0.001f,
-//                         @1.0f,
-//                         @1000.0f,
-//                         @0.0283495f,
-//                         @0.453592f,
-//                         @6.35029f
-//                         ];
-//    
-//    _fromKgMultipliers = @[
-//                           @1000000,
-//                           @1000,
-//                           @1,
-//                           @0.001,
-//                           @35.2739907,
-//                           @2.2046244,
-//                           @0.1574731
-//                           ];
+//    for(NSString *key in [_weightUnitsToKgs allKeys]) {
+//        NSLog(@"%@: %f", key, [[_weightUnitsToKgs objectForKey:key] floatValue]);
+//    }
 
 }
 
@@ -131,12 +98,10 @@ didFailToReceiveAdWithError:(GADRequestError *)error {
     NSArray *sortedKeys = [[_weightUnitsToKgs allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
 
     if (_fromUnitSelected == nil) {
-//        _fromUnitSelected = [_unitsArray firstObject];
         _fromUnitSelected = [sortedKeys firstObject];
     }
 
     if (_toUnitSelected == nil) {
-//        _toUnitSelected = [_unitsArray firstObject];
         _toUnitSelected = [sortedKeys firstObject];
     }
 
@@ -161,13 +126,11 @@ didFailToReceiveAdWithError:(GADRequestError *)error {
 }
 
 - (float)convertToKg:(float)inputValue {
-//    float toKgMultiplier = [_toKgMultipliers[[_unitsArray indexOfObject:_fromUnitSelected]] floatValue];
     float multiplier = [[_weightUnitsToKgs valueForKey:_fromUnitSelected] floatValue];
     return inputValue * multiplier;
 }
 
 -(float)convertFromKg:(float)kgValue {
-//    float fromKgMultiplier = [_fromKgMultipliers[[_unitsArray indexOfObject:_toUnitSelected]] floatValue];
     float divisor = [[_weightUnitsToKgs valueForKey:_toUnitSelected] floatValue];
     return kgValue / divisor;
 }
@@ -175,16 +138,13 @@ didFailToReceiveAdWithError:(GADRequestError *)error {
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     NSArray *sortedKeys = [[_weightUnitsToKgs allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     if (pickerView == fromUnit) {
-//        _fromUnitSelected = [_unitsArray objectAtIndex:row];
         _fromUnitSelected  = [sortedKeys objectAtIndex:row];
     } else {
-//        _toUnitSelected = [_unitsArray objectAtIndex:row];
         _toUnitSelected = [sortedKeys objectAtIndex:row];
     }
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-//    return _unitsArray.count;
     return _weightUnitsToKgs.count;
 }
 
@@ -193,7 +153,6 @@ didFailToReceiveAdWithError:(GADRequestError *)error {
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-//    return _unitsArray[row];
     NSArray *sortedKeys = [[_weightUnitsToKgs allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     return [sortedKeys objectAtIndex: row];
 }
