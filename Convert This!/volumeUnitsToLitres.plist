@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Quart(UK)</key>
+	<real>1.13652</real>
+	<key>Quarts (US)</key>
+	<real>0.946353</real>
+	<key>Fluid Ounce (UK)</key>
+	<real>0.0284131</real>
+	<key>Fluid Ounces (US)</key>
+	<real>0.0295735</real>
+	<key>Gallons (UK)</key>
+	<real>4.54609</real>
+	<key>Gallons (Dry) (US)</key>
+	<real>4.40488</real>
+	<key>Gallons (Liquid) (US)</key>
+	<real>3.78541</real>
+	<key>Barrels (UK)</key>
+	<real>163.659</real>
+	<key>Barrels (US)</key>
+	<real>117.348</real>
+	<key>Bushells (US)</key>
+	<real>35.2391</real>
+	<key>Pints (UK)</key>
+	<real>0.568261</real>
+	<key>Pints (US)</key>
+	<real>0.473176</real>
+	<key>Cups (US)</key>
+	<real>0.236588</real>
+	<key>Tablespoons (UK)</key>
+	<real>0.0177582</real>
+	<key>Tablespoons (US)</key>
+	<real>0.0147868</real>
+	<key>Teaspoons (UK)</key>
+	<real>0.00591939</real>
+	<key>Teaspoons (US)</key>
+	<real>0.00492892</real>
+	<key>Litres</key>
+	<integer>1</integer>
+	<key>Decilitres</key>
+	<real>0.1</real>
+	<key>Centilitres</key>
+	<real>0.01</real>
+	<key>Millilitres (cc)</key>
+	<real>0.001</real>
+	<key>Cubic Feet</key>
+	<real>28.3168</real>
+	<key>Cubic Yard</key>
+	<real>764.5549999999999</real>
+	<key>Cubic Inches</key>
+	<real>0.0163871</real>
+	<key>Cubic Metres</key>
+	<integer>1000</integer>
+	<key>Cubic Centimetres</key>
+	<real>0.001</real>
+	<key>Cubic Millimetres</key>
+	<real>1e-06</real>
+</dict>
+</plist>

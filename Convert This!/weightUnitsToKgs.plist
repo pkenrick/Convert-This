@@ -8,8 +8,12 @@
 	<real>0.453592</real>
 	<key>Ounces</key>
 	<real>0.0283495</real>
-	<key>Tonnes</key>
+	<key>Tons (Metric)</key>
 	<real>1000</real>
+	<key>Tons (Long) (US)</key>
+	<string>1016.05</string>
+	<key>Tons (Short) (US)</key>
+	<string>907.185</string>
 	<key>Kilograms</key>
 	<integer>1</integer>
 	<key>Grams</key>
