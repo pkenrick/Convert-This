@@ -15,9 +15,10 @@
 
 @end
 
-NSArray *_tempUnitsArray;
 NSString *_tempFromUnitSelected;
 NSString *_tempToUnitSelected;
+
+NSDictionary *_temperatureUnitsToCelcius;
 
 @implementation TemperatureViewController
 
@@ -49,10 +50,16 @@ NSString *_tempToUnitSelected;
     fromUnit.delegate = self;
     toUnit.delegate = self;
     
-    _tempUnitsArray = @[
-                        @"Degrees Celcius",
-                        @"Degrees Fahrenheit"
-                        ];
+    NSString *plistCatPath = [[NSBundle mainBundle] pathForResource:@"temperatureUnitsToCelcius" ofType:@"plist"];
+    _temperatureUnitsToCelcius = [NSDictionary dictionaryWithContentsOfFile:plistCatPath];
+    
+//    for(NSString *key in [_temperatureUnitsToCelcius allKeys]) {
+//        NSDictionary *unitDict = [_temperatureUnitsToCelcius objectForKey:key];
+//        for(NSString *innerKey in [unitDict allKeys]) {
+//            NSLog(@"%@: %f", key, [[unitDict objectForKey:innerKey] floatValue]);
+//        }
+//
+//    }
 }
 
 - (IBAction)toggleSign:(id)sender {
@@ -67,15 +74,19 @@ NSString *_tempToUnitSelected;
 
 - (IBAction)userDidPressConvert:(id)sender {
     
+    NSArray *sortedKeys = [[_temperatureUnitsToCelcius allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+
     if (_tempFromUnitSelected == nil) {
-        _tempFromUnitSelected = [_tempUnitsArray firstObject];
+        _tempFromUnitSelected = [sortedKeys firstObject];
     }
     
     if (_tempToUnitSelected == nil) {
-        _tempToUnitSelected = [_tempUnitsArray firstObject];
+        _tempToUnitSelected = [sortedKeys firstObject];
     }
     
-    float finalResult = [self convert:[inputField.text floatValue]];
+    float celciusResult = [self convertToCelcius:[inputField.text floatValue]];
+    float finalResult = [self convertFromCelcius:celciusResult];
+
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
@@ -86,6 +97,18 @@ NSString *_tempToUnitSelected;
     NSNumber *finalResultNumber = [NSNumber numberWithFloat:finalResult];
     NSString *formattedResult = [NSString stringWithFormat:@"%@\n%@", [formatter stringFromNumber:finalResultNumber], _tempToUnitSelected];
     resultLabel.text = formattedResult;
+}
+
+- (float)convertToCelcius:(float)inputValue {
+    NSDictionary *requiredDict = [_temperatureUnitsToCelcius objectForKey:_tempFromUnitSelected];
+    float celciusResult = (inputValue + [requiredDict[@"beforeConstant"] floatValue]) * [requiredDict[@"multiplier"] floatValue];
+    return celciusResult;
+}
+
+- (float)convertFromCelcius:(float)celciusValue {
+    NSDictionary *requiredDict = [_temperatureUnitsToCelcius objectForKey:_tempToUnitSelected];
+    float finalResult = celciusValue / [requiredDict[@"multiplier"] floatValue] - [requiredDict[@"beforeConstant"] floatValue];
+    return finalResult;
 }
 
 - (float)convert:(float)inputValue {
@@ -105,15 +128,16 @@ NSString *_tempToUnitSelected;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    NSArray *sortedKeys = [[_temperatureUnitsToCelcius allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     if (pickerView == fromUnit) {
-        _tempFromUnitSelected = [_tempUnitsArray objectAtIndex:row];
+        _tempFromUnitSelected = [sortedKeys objectAtIndex:row];
     } else {
-        _tempToUnitSelected = [_tempUnitsArray objectAtIndex:row];
+        _tempToUnitSelected = [sortedKeys objectAtIndex:row];
     }
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return _tempUnitsArray.count;
+    return [_temperatureUnitsToCelcius allKeys].count;
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -121,7 +145,8 @@ NSString *_tempToUnitSelected;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return _tempUnitsArray[row];
+    NSArray *sortedKeys = [[_temperatureUnitsToCelcius allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    return [sortedKeys objectAtIndex:row];
 }
 
 - (void)dismissKeyboard {

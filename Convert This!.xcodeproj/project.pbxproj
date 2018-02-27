@@ -19,6 +19,7 @@
 		D9310946203F97CC00DAEF18 /* icons8-ruler-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9310942203F97C800DAEF18 /* icons8-ruler-35.png */; };
 		D9310947203F97CC00DAEF18 /* icons8-temperature-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9310943203F97CA00DAEF18 /* icons8-temperature-35.png */; };
 		D9310948203F97CC00DAEF18 /* icons8-volume-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9310944203F97CB00DAEF18 /* icons8-volume-35.png */; };
+		D931094A20448F1C00DAEF18 /* temperatureUnitsToCelcius.plist in Resources */ = {isa = PBXBuildFile; fileRef = D931094920448F1C00DAEF18 /* temperatureUnitsToCelcius.plist */; };
 		D934C2ED202749DC00218E51 /* DistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D934C2EC202749DC00218E51 /* DistanceViewController.m */; };
 		D934C2F0202772B600218E51 /* TemperatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D934C2EF202772B600218E51 /* TemperatureViewController.m */; };
 		D93810202027AC76002728FB /* AreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D938101F2027AC76002728FB /* AreaViewController.m */; };
@@ -47,6 +48,7 @@
 		D9310942203F97C800DAEF18 /* icons8-ruler-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ruler-35.png"; sourceTree = "<group>"; };
 		D9310943203F97CA00DAEF18 /* icons8-temperature-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-temperature-35.png"; sourceTree = "<group>"; };
 		D9310944203F97CB00DAEF18 /* icons8-volume-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-volume-35.png"; sourceTree = "<group>"; };
+		D931094920448F1C00DAEF18 /* temperatureUnitsToCelcius.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = temperatureUnitsToCelcius.plist; sourceTree = "<group>"; };
 		D934C2EB202749DC00218E51 /* DistanceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DistanceViewController.h; sourceTree = "<group>"; };
 		D934C2EC202749DC00218E51 /* DistanceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DistanceViewController.m; sourceTree = "<group>"; };
 		D934C2EE202772B600218E51 /* TemperatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemperatureViewController.h; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				D94B012020211D060017BFA3 /* Info.plist */,
 				D9310931203E11BE00DAEF18 /* weightUnitsToKgs.plist */,
 				D9310939203F4C6F00DAEF18 /* distanceUnitsToMetres.plist */,
+				D931094920448F1C00DAEF18 /* temperatureUnitsToCelcius.plist */,
 				D931093B203F4F0400DAEF18 /* areaUnitsToSquareMetres.plist */,
 				D931093D203F536C00DAEF18 /* volumeUnitsToCubicMetres.plist */,
 				D94B012120211D060017BFA3 /* main.m */,
@@ -225,6 +228,7 @@
 				D9310947203F97CC00DAEF18 /* icons8-temperature-35.png in Resources */,
 				D9310932203E11BE00DAEF18 /* weightUnitsToKgs.plist in Resources */,
 				D94B011F20211D060017BFA3 /* LaunchScreen.storyboard in Resources */,
+				D931094A20448F1C00DAEF18 /* temperatureUnitsToCelcius.plist in Resources */,
 				D9310946203F97CC00DAEF18 /* icons8-ruler-35.png in Resources */,
 				D94B011C20211D060017BFA3 /* Assets.xcassets in Resources */,
 				D9310925203CB2FF00DAEF18 /* title.png in Resources */,

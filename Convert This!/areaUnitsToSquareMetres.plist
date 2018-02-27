@@ -2,8 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Square Yard</key>
+	<real>0.836127</real>
+	<key>Square Decimetres</key>
+	<real>0.01</real>
 	<key>Square Miles</key>
-	<integer>2590000</integer>
+	<real>2590000</real>
 	<key>Acres</key>
 	<real>4046.86</real>
 	<key>Square Feet</key>

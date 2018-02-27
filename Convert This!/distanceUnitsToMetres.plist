@@ -2,6 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Chain</key>
+	<real>20.1168</real>
+	<key>Rod</key>
+	<real>5.0292</real>
+	<key>Furlong</key>
+	<real>201.168</real>
+	<key>League</key>
+	<integer>5556</integer>
+	<key>Nautical Mile</key>
+	<integer>1852</integer>
+	<key>Decimetre</key>
+	<real>0.1</real>
 	<key>Miles</key>
 	<real>1609.34</real>
 	<key>Yards</key>
