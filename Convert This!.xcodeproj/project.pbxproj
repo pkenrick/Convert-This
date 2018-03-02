@@ -14,7 +14,6 @@
 		D931093A203F4C6F00DAEF18 /* distanceUnitsToMetres.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9310939203F4C6F00DAEF18 /* distanceUnitsToMetres.plist */; };
 		D931093C203F4F0400DAEF18 /* areaUnitsToSquareMetres.plist in Resources */ = {isa = PBXBuildFile; fileRef = D931093B203F4F0400DAEF18 /* areaUnitsToSquareMetres.plist */; };
 		D931093E203F536C00DAEF18 /* volumeUnitsToLitres.plist in Resources */ = {isa = PBXBuildFile; fileRef = D931093D203F536C00DAEF18 /* volumeUnitsToLitres.plist */; };
-		D9310940203F971500DAEF18 /* icons8-weight-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D931093F203F971400DAEF18 /* icons8-weight-35.png */; };
 		D9310945203F97CC00DAEF18 /* icons8-resize-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9310941203F97C800DAEF18 /* icons8-resize-35.png */; };
 		D9310946203F97CC00DAEF18 /* icons8-ruler-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9310942203F97C800DAEF18 /* icons8-ruler-35.png */; };
 		D9310947203F97CC00DAEF18 /* icons8-temperature-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9310943203F97CA00DAEF18 /* icons8-temperature-35.png */; };
@@ -30,6 +29,14 @@
 		D94B011F20211D060017BFA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D94B011D20211D060017BFA3 /* LaunchScreen.storyboard */; };
 		D94B012220211D060017BFA3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D94B012120211D060017BFA3 /* main.m */; };
 		D99E8F8B20213DD800A50B5F /* WeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D99E8F8A20213DD800A50B5F /* WeightViewController.m */; };
+		D9FADA122048C07400F6E71C /* icons8-star-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA112048BF3500F6E71C /* icons8-star-35.png */; };
+		D9FADA132048C0A300F6E71C /* icons8-electrical-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA102048BCE700F6E71C /* icons8-electrical-35.png */; };
+		D9FADA142048C0A300F6E71C /* icons8-pressure-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA0F2048BC0000F6E71C /* icons8-pressure-35.png */; };
+		D9FADA152048C0AF00F6E71C /* icons8-weight-35 (1).png in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA0E2048BBB600F6E71C /* icons8-weight-35 (1).png */; };
+		D9FADA162048C0AF00F6E71C /* icons8-save-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA0D2048BB6600F6E71C /* icons8-save-50.png */; };
+		D9FADA172048C0AF00F6E71C /* icons8-gas-station-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA0C2048BADA00F6E71C /* icons8-gas-station-35.png */; };
+		D9FADA182048C0AF00F6E71C /* icons8-time-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA0B2048B9AB00F6E71C /* icons8-time-35.png */; };
+		D9FADA192048C0AF00F6E71C /* icons8-speed-35 (1).png in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA032048B68E00F6E71C /* icons8-speed-35 (1).png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +50,6 @@
 		D9310939203F4C6F00DAEF18 /* distanceUnitsToMetres.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = distanceUnitsToMetres.plist; sourceTree = "<group>"; };
 		D931093B203F4F0400DAEF18 /* areaUnitsToSquareMetres.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = areaUnitsToSquareMetres.plist; sourceTree = "<group>"; };
 		D931093D203F536C00DAEF18 /* volumeUnitsToLitres.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = volumeUnitsToLitres.plist; sourceTree = "<group>"; };
-		D931093F203F971400DAEF18 /* icons8-weight-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-weight-35.png"; sourceTree = "<group>"; };
 		D9310941203F97C800DAEF18 /* icons8-resize-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-resize-35.png"; sourceTree = "<group>"; };
 		D9310942203F97C800DAEF18 /* icons8-ruler-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ruler-35.png"; sourceTree = "<group>"; };
 		D9310943203F97CA00DAEF18 /* icons8-temperature-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-temperature-35.png"; sourceTree = "<group>"; };
@@ -67,6 +73,14 @@
 		D94B012120211D060017BFA3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D99E8F8920213DD800A50B5F /* WeightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeightViewController.h; sourceTree = "<group>"; };
 		D99E8F8A20213DD800A50B5F /* WeightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeightViewController.m; sourceTree = "<group>"; };
+		D9FADA032048B68E00F6E71C /* icons8-speed-35 (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-speed-35 (1).png"; sourceTree = "<group>"; };
+		D9FADA0B2048B9AB00F6E71C /* icons8-time-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-time-35.png"; sourceTree = "<group>"; };
+		D9FADA0C2048BADA00F6E71C /* icons8-gas-station-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-gas-station-35.png"; sourceTree = "<group>"; };
+		D9FADA0D2048BB6600F6E71C /* icons8-save-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-save-50.png"; sourceTree = "<group>"; };
+		D9FADA0E2048BBB600F6E71C /* icons8-weight-35 (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-weight-35 (1).png"; sourceTree = "<group>"; };
+		D9FADA0F2048BC0000F6E71C /* icons8-pressure-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-pressure-35.png"; sourceTree = "<group>"; };
+		D9FADA102048BCE700F6E71C /* icons8-electrical-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-electrical-35.png"; sourceTree = "<group>"; };
+		D9FADA112048BF3500F6E71C /* icons8-star-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-star-35.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,11 +107,18 @@
 		D9310926203CB36900DAEF18 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D9FADA112048BF3500F6E71C /* icons8-star-35.png */,
+				D9FADA102048BCE700F6E71C /* icons8-electrical-35.png */,
+				D9FADA0F2048BC0000F6E71C /* icons8-pressure-35.png */,
+				D9FADA0E2048BBB600F6E71C /* icons8-weight-35 (1).png */,
+				D9FADA0D2048BB6600F6E71C /* icons8-save-50.png */,
+				D9FADA0C2048BADA00F6E71C /* icons8-gas-station-35.png */,
+				D9FADA0B2048B9AB00F6E71C /* icons8-time-35.png */,
+				D9FADA032048B68E00F6E71C /* icons8-speed-35 (1).png */,
 				D9310941203F97C800DAEF18 /* icons8-resize-35.png */,
 				D9310942203F97C800DAEF18 /* icons8-ruler-35.png */,
 				D9310943203F97CA00DAEF18 /* icons8-temperature-35.png */,
 				D9310944203F97CB00DAEF18 /* icons8-volume-35.png */,
-				D931093F203F971400DAEF18 /* icons8-weight-35.png */,
 				D9310924203CB2FF00DAEF18 /* title.png */,
 			);
 			name = images;
@@ -227,16 +248,23 @@
 				D931093E203F536C00DAEF18 /* volumeUnitsToLitres.plist in Resources */,
 				D9310947203F97CC00DAEF18 /* icons8-temperature-35.png in Resources */,
 				D9310932203E11BE00DAEF18 /* weightUnitsToKgs.plist in Resources */,
+				D9FADA152048C0AF00F6E71C /* icons8-weight-35 (1).png in Resources */,
 				D94B011F20211D060017BFA3 /* LaunchScreen.storyboard in Resources */,
+				D9FADA182048C0AF00F6E71C /* icons8-time-35.png in Resources */,
 				D931094A20448F1C00DAEF18 /* temperatureUnitsToCelcius.plist in Resources */,
+				D9FADA162048C0AF00F6E71C /* icons8-save-50.png in Resources */,
 				D9310946203F97CC00DAEF18 /* icons8-ruler-35.png in Resources */,
+				D9FADA122048C07400F6E71C /* icons8-star-35.png in Resources */,
+				D9FADA192048C0AF00F6E71C /* icons8-speed-35 (1).png in Resources */,
+				D9FADA142048C0A300F6E71C /* icons8-pressure-35.png in Resources */,
 				D94B011C20211D060017BFA3 /* Assets.xcassets in Resources */,
 				D9310925203CB2FF00DAEF18 /* title.png in Resources */,
+				D9FADA132048C0A300F6E71C /* icons8-electrical-35.png in Resources */,
 				D94B011A20211D060017BFA3 /* Main.storyboard in Resources */,
 				D9310945203F97CC00DAEF18 /* icons8-resize-35.png in Resources */,
+				D9FADA172048C0AF00F6E71C /* icons8-gas-station-35.png in Resources */,
 				D931093A203F4C6F00DAEF18 /* distanceUnitsToMetres.plist in Resources */,
 				D9310948203F97CC00DAEF18 /* icons8-volume-35.png in Resources */,
-				D9310940203F971500DAEF18 /* icons8-weight-35.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

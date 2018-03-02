@@ -24,67 +24,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="W5s-0V-OeK">
-                                <rect key="frame" x="112.5" y="186.5" width="150" height="401"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ict-zM-Amn">
-                                        <rect key="frame" x="0.0" y="0.0" width="150" height="74"/>
-                                        <color key="backgroundColor" red="0.82206808371977169" green="0.94664895002861682" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="Weight" image="icons8-weight-35.png">
-                                            <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="sbU-u1-ROr" kind="modal" id="5iy-hB-pzG"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLP-IA-O2y">
-                                        <rect key="frame" x="0.0" y="82" width="150" height="73.5"/>
-                                        <color key="backgroundColor" red="0.6161184358656655" green="0.8945449206498377" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title=" Distance" image="icons8-ruler-35.png">
-                                            <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="SQa-Is-CaK" kind="modal" id="YoP-WI-GWy"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hg8-f1-MCk">
-                                        <rect key="frame" x="0.0" y="163.5" width="150" height="74"/>
-                                        <color key="backgroundColor" red="0.3917684909056135" green="0.82940650166091123" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="Temp" image="icons8-temperature-35.png">
-                                            <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="koB-Pz-THR" kind="modal" id="WfJ-VV-mcX"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZk-hc-uAe">
-                                        <rect key="frame" x="0.0" y="245.5" width="150" height="73.5"/>
-                                        <color key="backgroundColor" red="0.1876481076439801" green="0.73419080058073938" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="  Area" image="icons8-resize-35.png">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="NFW-uF-5VO" kind="modal" id="6eg-YP-dDv"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TS0-d0-fic">
-                                        <rect key="frame" x="0.0" y="327" width="150" height="74"/>
-                                        <color key="backgroundColor" red="0.046499499697429725" green="0.61020988436112389" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="  Volume" image="icons8-volume-35.png">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="dU8-m6-6M0" kind="modal" id="KZ9-n1-se2"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EL4-Js-KOc" customClass="GADBannerView">
                                 <rect key="frame" x="27" y="617" width="320" height="50"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -102,6 +41,134 @@
                                 <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pOg-1p-3y1">
+                                <rect key="frame" x="56.5" y="194.5" width="262.5" height="366.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="W5s-0V-OeK">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.5" height="366.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IA1-hZ-gsD">
+                                                <rect key="frame" x="0.0" y="0.0" width="127.5" height="54.5"/>
+                                                <color key="backgroundColor" red="0.82206808369999995" green="0.94664895000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="  Weight" image="icons8-weight-35 (1).png">
+                                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="sbU-u1-ROr" kind="modal" id="WfI-a6-Hnz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLP-IA-O2y">
+                                                <rect key="frame" x="0.0" y="62.5" width="127.5" height="54.5"/>
+                                                <color key="backgroundColor" red="0.6161184358656655" green="0.8945449206498377" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title=" Distance" image="icons8-ruler-35.png">
+                                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="SQa-Is-CaK" kind="modal" id="YoP-WI-GWy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hg8-f1-MCk">
+                                                <rect key="frame" x="0.0" y="125" width="127.5" height="54.5"/>
+                                                <color key="backgroundColor" red="0.3917684909056135" green="0.82940650166091123" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="  Temp" image="icons8-temperature-35.png">
+                                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="koB-Pz-THR" kind="modal" id="WfJ-VV-mcX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZk-hc-uAe">
+                                                <rect key="frame" x="0.0" y="187.5" width="127.5" height="54"/>
+                                                <color key="backgroundColor" red="0.1876481076439801" green="0.73419080058073938" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="  Area" image="icons8-resize-35.png">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="NFW-uF-5VO" kind="modal" id="6eg-YP-dDv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TS0-d0-fic">
+                                                <rect key="frame" x="0.0" y="249.5" width="127.5" height="54.5"/>
+                                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title=" Volume" image="icons8-volume-35.png">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="dU8-m6-6M0" kind="modal" id="KZ9-n1-se2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTf-ut-h6I">
+                                                <rect key="frame" x="0.0" y="312" width="127.5" height="54.5"/>
+                                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="  Speed" image="icons8-speed-35 (1).png">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Fvt-x0-TeZ">
+                                        <rect key="frame" x="135.5" y="0.0" width="127" height="366.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGu-qX-SsJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="127" height="54.5"/>
+                                                <color key="backgroundColor" red="0.82206808369999995" green="0.94664895000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="  Time" image="icons8-time-35.png">
+                                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6W-RO-gjL">
+                                                <rect key="frame" x="0.0" y="62.5" width="127" height="54.5"/>
+                                                <color key="backgroundColor" red="0.61611843590000004" green="0.89454492060000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="  Fuel" image="icons8-gas-station-35.png">
+                                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9L-aQ-fQV">
+                                                <rect key="frame" x="0.0" y="125" width="127" height="54.5"/>
+                                                <color key="backgroundColor" red="0.39176849089999999" green="0.82940650169999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="  Data" image="icons8-save-50.png">
+                                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wld-9O-S5p">
+                                                <rect key="frame" x="0.0" y="187.5" width="127" height="54"/>
+                                                <color key="backgroundColor" red="0.1876481076" green="0.73419080059999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title=" Pressure" image="icons8-pressure-35.png">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXp-4y-KPG">
+                                                <rect key="frame" x="0.0" y="249.5" width="127" height="54.5"/>
+                                                <color key="backgroundColor" red="0.046499499700000002" green="0.61020988440000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="  Power" image="icons8-electrical-35.png">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="M29-Um-ahl">
+                                                <rect key="frame" x="0.0" y="312" width="127" height="54.5"/>
+                                                <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" title="  *Rate the App!*" image="icons8-star-35.png">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -110,13 +177,13 @@
                             <constraint firstItem="WKi-eK-5Aa" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.15" id="4Us-0R-ywv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="WKi-eK-5Aa" secondAttribute="top" multiplier="0.4" id="6eH-jf-Bba"/>
                             <constraint firstItem="WKi-eK-5Aa" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.9" id="7mD-TF-1fY"/>
-                            <constraint firstItem="W5s-0V-OeK" firstAttribute="top" secondItem="Hn5-Tg-Pqd" secondAttribute="bottom" multiplier="1.1" constant="8" symbolic="YES" id="Cnm-1l-KbH"/>
-                            <constraint firstItem="EL4-Js-KOc" firstAttribute="top" secondItem="W5s-0V-OeK" secondAttribute="bottom" multiplier="1.05" id="MxK-Ur-lOQ"/>
-                            <constraint firstItem="W5s-0V-OeK" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.4" id="Rzs-Pk-Eca"/>
-                            <constraint firstItem="W5s-0V-OeK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TLu-l3-Hap"/>
+                            <constraint firstItem="pOg-1p-3y1" firstAttribute="top" secondItem="Hn5-Tg-Pqd" secondAttribute="bottom" multiplier="1.2" id="CmT-dd-ffD"/>
+                            <constraint firstItem="pOg-1p-3y1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Czo-BM-b7O"/>
                             <constraint firstItem="Hn5-Tg-Pqd" firstAttribute="top" secondItem="WKi-eK-5Aa" secondAttribute="bottom" multiplier="0.95" id="Wqs-Ou-4F9"/>
                             <constraint firstItem="EL4-Js-KOc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e7Q-nC-AMR"/>
+                            <constraint firstItem="EL4-Js-KOc" firstAttribute="top" secondItem="pOg-1p-3y1" secondAttribute="bottom" multiplier="1.1" id="fOL-Mu-hwc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EL4-Js-KOc" secondAttribute="bottom" id="fdk-ez-0pT"/>
+                            <constraint firstItem="pOg-1p-3y1" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.7" id="rCu-Jb-9ml"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -918,11 +985,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-electrical-35.png" width="35" height="35"/>
+        <image name="icons8-gas-station-35.png" width="35" height="35"/>
+        <image name="icons8-pressure-35.png" width="35" height="35"/>
         <image name="icons8-resize-35.png" width="35" height="35"/>
         <image name="icons8-ruler-35.png" width="35" height="35"/>
+        <image name="icons8-save-50.png" width="35" height="35"/>
+        <image name="icons8-speed-35 (1).png" width="35" height="35"/>
+        <image name="icons8-star-35.png" width="35" height="35"/>
         <image name="icons8-temperature-35.png" width="35" height="35"/>
+        <image name="icons8-time-35.png" width="35" height="35"/>
         <image name="icons8-volume-35.png" width="35" height="35"/>
-        <image name="icons8-weight-35.png" width="35" height="35"/>
+        <image name="icons8-weight-35 (1).png" width="35" height="35"/>
         <image name="title.png" width="1363" height="308"/>
     </resources>
 </document>
