@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BTU/h</key>
+	<real>3412.142</real>
+	<key>Horsepower</key>
+	<real>0.7457</real>
+	<key>Kilowatts</key>
+	<integer>1</integer>
+	<key>Watts</key>
+	<real>0.001</real>
+	<key>Refrigeration Ton</key>
+	<real>3.51685</real>
+</dict>
+</plist>

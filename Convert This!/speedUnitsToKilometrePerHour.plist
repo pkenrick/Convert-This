@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kilometres per Hour</key>
+	<integer>1</integer>
+	<key>Metres per Second</key>
+	<real>3.6</real>
+	<key>Miles per Hour</key>
+	<real>1.60934</real>
+	<key>Feet per Minute</key>
+	<real>0.018288</real>
+	<key>Feet per Second</key>
+	<real>1.09728</real>
+	<key>Knots</key>
+	<real>1.852</real>
+	<key>Speed of Light</key>
+	<real>1079000000</real>
+	<key>Speed of Sound Mach (Air)</key>
+	<real>1234.8</real>
+	<key>Speed of Sound Mach (Water)</key>
+	<real>5337.719999999</real>
+</dict>
+</plist>

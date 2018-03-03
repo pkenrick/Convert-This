@@ -16,8 +16,8 @@
 
 @end
 
-NSString *_fromUnitSelected;
-NSString *_toUnitSelected;
+NSString *_weightFromUnitSelected;
+NSString *_weightToUnitSelected;
 
 NSDictionary *_weightUnitsToKgs;
 
@@ -97,12 +97,12 @@ didFailToReceiveAdWithError:(GADRequestError *)error {
     
     NSArray *sortedKeys = [[_weightUnitsToKgs allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
 
-    if (_fromUnitSelected == nil) {
-        _fromUnitSelected = [sortedKeys firstObject];
+    if (_weightFromUnitSelected == nil) {
+        _weightFromUnitSelected = [sortedKeys firstObject];
     }
 
-    if (_toUnitSelected == nil) {
-        _toUnitSelected = [sortedKeys firstObject];
+    if (_weightToUnitSelected == nil) {
+        _weightToUnitSelected = [sortedKeys firstObject];
     }
 
     float kgResult = [self convertToKg:[inputField.text floatValue]];
@@ -118,29 +118,29 @@ didFailToReceiveAdWithError:(GADRequestError *)error {
     NSNumber *finalResultNumber = [NSNumber numberWithFloat:finalResult];
     NSString *formattedResult;
     if (finalResult < 0.00005) {
-        formattedResult = [NSString stringWithFormat:@"< 0.00005\n%@", _toUnitSelected];
+        formattedResult = [NSString stringWithFormat:@"< 0.00005\n%@", _weightToUnitSelected];
     } else {
-        formattedResult = [NSString stringWithFormat:@"%@\n%@", [formatter stringFromNumber:finalResultNumber], _toUnitSelected];
+        formattedResult = [NSString stringWithFormat:@"%@\n%@", [formatter stringFromNumber:finalResultNumber], _weightToUnitSelected];
     }
     resultLabel.text = formattedResult;
 }
 
 - (float)convertToKg:(float)inputValue {
-    float multiplier = [[_weightUnitsToKgs valueForKey:_fromUnitSelected] floatValue];
+    float multiplier = [[_weightUnitsToKgs valueForKey:_weightFromUnitSelected] floatValue];
     return inputValue * multiplier;
 }
 
 -(float)convertFromKg:(float)kgValue {
-    float divisor = [[_weightUnitsToKgs valueForKey:_toUnitSelected] floatValue];
+    float divisor = [[_weightUnitsToKgs valueForKey:_weightToUnitSelected] floatValue];
     return kgValue / divisor;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     NSArray *sortedKeys = [[_weightUnitsToKgs allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     if (pickerView == fromUnit) {
-        _fromUnitSelected  = [sortedKeys objectAtIndex:row];
+        _weightFromUnitSelected  = [sortedKeys objectAtIndex:row];
     } else {
-        _toUnitSelected = [sortedKeys objectAtIndex:row];
+        _weightToUnitSelected = [sortedKeys objectAtIndex:row];
     }
 }
 

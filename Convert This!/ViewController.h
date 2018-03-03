@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GeneralViewController.h"
 
 @interface ViewController : UIViewController
+
+- (IBAction)didSelectConverter:(id)sender;
 
 @end

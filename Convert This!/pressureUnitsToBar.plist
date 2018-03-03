@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Atmospheres</key>
+	<real>1.01325</real>
+	<key>Bar</key>
+	<integer>1</integer>
+	<key>Millibar</key>
+	<real>0.001</real>
+	<key>Inches Mercury</key>
+	<real>0.0338639</real>
+	<key>Millimetre Mercury</key>
+	<real>0.00133322</real>
+	<key>Megapascals</key>
+	<integer>10</integer>
+	<key>Kilopascals</key>
+	<real>0.01</real>
+	<key>Pascals</key>
+	<real>1e-05</real>
+	<key>Pound per Sq Foot</key>
+	<real>0.000478803</real>
+	<key>Pound per Sq Inch</key>
+	<real>0.06894757293168</real>
+</dict>
+</plist>

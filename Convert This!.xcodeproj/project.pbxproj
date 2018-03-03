@@ -37,6 +37,13 @@
 		D9FADA172048C0AF00F6E71C /* icons8-gas-station-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA0C2048BADA00F6E71C /* icons8-gas-station-35.png */; };
 		D9FADA182048C0AF00F6E71C /* icons8-time-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA0B2048B9AB00F6E71C /* icons8-time-35.png */; };
 		D9FADA192048C0AF00F6E71C /* icons8-speed-35 (1).png in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA032048B68E00F6E71C /* icons8-speed-35 (1).png */; };
+		D9FADA1B2049E88200F6E71C /* speedUnitsToKilometrePerHour.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA1A2049E88200F6E71C /* speedUnitsToKilometrePerHour.plist */; };
+		D9FADA27204A01C900F6E71C /* GeneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FADA26204A01C900F6E71C /* GeneralViewController.m */; };
+		D9FADA29204B025F00F6E71C /* dataUnitsToKilobytes.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA28204B025F00F6E71C /* dataUnitsToKilobytes.plist */; };
+		D9FADA2B204B073700F6E71C /* fuelUnitsToLitresPerKm.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA2A204B073700F6E71C /* fuelUnitsToLitresPerKm.plist */; };
+		D9FADA2D204B0C9200F6E71C /* powerUnitsToKilowatts.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA2C204B0C9200F6E71C /* powerUnitsToKilowatts.plist */; };
+		D9FADA2F204B0F6900F6E71C /* pressureUnitsToBar.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA2E204B0F6800F6E71C /* pressureUnitsToBar.plist */; };
+		D9FADA31204B138700F6E71C /* timeUnitsToHours.plist in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA30204B138700F6E71C /* timeUnitsToHours.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +88,14 @@
 		D9FADA0F2048BC0000F6E71C /* icons8-pressure-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-pressure-35.png"; sourceTree = "<group>"; };
 		D9FADA102048BCE700F6E71C /* icons8-electrical-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-electrical-35.png"; sourceTree = "<group>"; };
 		D9FADA112048BF3500F6E71C /* icons8-star-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-star-35.png"; sourceTree = "<group>"; };
+		D9FADA1A2049E88200F6E71C /* speedUnitsToKilometrePerHour.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = speedUnitsToKilometrePerHour.plist; sourceTree = "<group>"; };
+		D9FADA25204A01C900F6E71C /* GeneralViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneralViewController.h; sourceTree = "<group>"; };
+		D9FADA26204A01C900F6E71C /* GeneralViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneralViewController.m; sourceTree = "<group>"; };
+		D9FADA28204B025F00F6E71C /* dataUnitsToKilobytes.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = dataUnitsToKilobytes.plist; sourceTree = "<group>"; };
+		D9FADA2A204B073700F6E71C /* fuelUnitsToLitresPerKm.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = fuelUnitsToLitresPerKm.plist; sourceTree = "<group>"; };
+		D9FADA2C204B0C9200F6E71C /* powerUnitsToKilowatts.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = powerUnitsToKilowatts.plist; sourceTree = "<group>"; };
+		D9FADA2E204B0F6800F6E71C /* pressureUnitsToBar.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = pressureUnitsToBar.plist; sourceTree = "<group>"; };
+		D9FADA30204B138700F6E71C /* timeUnitsToHours.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = timeUnitsToHours.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +178,7 @@
 				D94B011B20211D060017BFA3 /* Assets.xcassets */,
 				D94B011D20211D060017BFA3 /* LaunchScreen.storyboard */,
 				D94B012020211D060017BFA3 /* Info.plist */,
+				D9FADA1A2049E88200F6E71C /* speedUnitsToKilometrePerHour.plist */,
 				D9310931203E11BE00DAEF18 /* weightUnitsToKgs.plist */,
 				D9310939203F4C6F00DAEF18 /* distanceUnitsToMetres.plist */,
 				D931094920448F1C00DAEF18 /* temperatureUnitsToCelcius.plist */,
@@ -171,6 +187,13 @@
 				D94B012120211D060017BFA3 /* main.m */,
 				D9310933203E194D00DAEF18 /* ViewController.h */,
 				D9310934203E194D00DAEF18 /* ViewController.m */,
+				D9FADA28204B025F00F6E71C /* dataUnitsToKilobytes.plist */,
+				D9FADA2A204B073700F6E71C /* fuelUnitsToLitresPerKm.plist */,
+				D9FADA25204A01C900F6E71C /* GeneralViewController.h */,
+				D9FADA26204A01C900F6E71C /* GeneralViewController.m */,
+				D9FADA30204B138700F6E71C /* timeUnitsToHours.plist */,
+				D9FADA2E204B0F6800F6E71C /* pressureUnitsToBar.plist */,
+				D9FADA2C204B0C9200F6E71C /* powerUnitsToKilowatts.plist */,
 			);
 			path = "Convert This!";
 			sourceTree = "<group>";
@@ -248,12 +271,16 @@
 				D931093E203F536C00DAEF18 /* volumeUnitsToLitres.plist in Resources */,
 				D9310947203F97CC00DAEF18 /* icons8-temperature-35.png in Resources */,
 				D9310932203E11BE00DAEF18 /* weightUnitsToKgs.plist in Resources */,
+				D9FADA2D204B0C9200F6E71C /* powerUnitsToKilowatts.plist in Resources */,
+				D9FADA31204B138700F6E71C /* timeUnitsToHours.plist in Resources */,
 				D9FADA152048C0AF00F6E71C /* icons8-weight-35 (1).png in Resources */,
 				D94B011F20211D060017BFA3 /* LaunchScreen.storyboard in Resources */,
 				D9FADA182048C0AF00F6E71C /* icons8-time-35.png in Resources */,
 				D931094A20448F1C00DAEF18 /* temperatureUnitsToCelcius.plist in Resources */,
 				D9FADA162048C0AF00F6E71C /* icons8-save-50.png in Resources */,
+				D9FADA29204B025F00F6E71C /* dataUnitsToKilobytes.plist in Resources */,
 				D9310946203F97CC00DAEF18 /* icons8-ruler-35.png in Resources */,
+				D9FADA1B2049E88200F6E71C /* speedUnitsToKilometrePerHour.plist in Resources */,
 				D9FADA122048C07400F6E71C /* icons8-star-35.png in Resources */,
 				D9FADA192048C0AF00F6E71C /* icons8-speed-35 (1).png in Resources */,
 				D9FADA142048C0A300F6E71C /* icons8-pressure-35.png in Resources */,
@@ -264,6 +291,8 @@
 				D9310945203F97CC00DAEF18 /* icons8-resize-35.png in Resources */,
 				D9FADA172048C0AF00F6E71C /* icons8-gas-station-35.png in Resources */,
 				D931093A203F4C6F00DAEF18 /* distanceUnitsToMetres.plist in Resources */,
+				D9FADA2B204B073700F6E71C /* fuelUnitsToLitresPerKm.plist in Resources */,
+				D9FADA2F204B0F6900F6E71C /* pressureUnitsToBar.plist in Resources */,
 				D9310948203F97CC00DAEF18 /* icons8-volume-35.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +359,7 @@
 				D99E8F8B20213DD800A50B5F /* WeightViewController.m in Sources */,
 				D9310935203E194D00DAEF18 /* ViewController.m in Sources */,
 				D934C2ED202749DC00218E51 /* DistanceViewController.m in Sources */,
+				D9FADA27204A01C900F6E71C /* GeneralViewController.m in Sources */,
 				D934C2F0202772B600218E51 /* TemperatureViewController.m in Sources */,
 				D94B012220211D060017BFA3 /* main.m in Sources */,
 				D93810202027AC76002728FB /* AreaViewController.m in Sources */,

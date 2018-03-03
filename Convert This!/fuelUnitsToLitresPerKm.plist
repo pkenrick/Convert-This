@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Miles/Gallon (US)</key>
+	<real>2.35214583</real>
+	<key>Miles/Gallon (UK)</key>
+	<real>2.82481053</real>
+	<key>Litres/100Km</key>
+	<real>0.01</real>
+	<key>Litres/Km</key>
+	<integer>1</integer>
+	<key>Kilometres/Litre</key>
+	<integer>1</integer>
+</dict>
+</plist>
