@@ -65,10 +65,7 @@ NSDictionary *unitsDict;
     } else if ([converterType isEqualToString:@"Area"]) {
         unitsDict = [self loadUnitsFromFile:@"areaUnitsToSquareMetres"];
     } else if ([converterType isEqualToString:@"Volume"]) {
-        unitsDict = [self loadUnitsFromFile:@"volumeUnitsToLitres"];
-
-    
-        
+        unitsDict = [self loadUnitsFromFile:@"volumeUnitsToLitres"];      
     } else if ([converterType isEqualToString:@"Speed"]) {
         unitsDict = [self loadUnitsFromFile:@"speedUnitsToKilometrePerHour"];
     } else if ([converterType isEqualToString:@"Data"]) {

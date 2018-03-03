@@ -19,16 +19,12 @@
 		D9310947203F97CC00DAEF18 /* icons8-temperature-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9310943203F97CA00DAEF18 /* icons8-temperature-35.png */; };
 		D9310948203F97CC00DAEF18 /* icons8-volume-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9310944203F97CB00DAEF18 /* icons8-volume-35.png */; };
 		D931094A20448F1C00DAEF18 /* temperatureUnitsToCelcius.plist in Resources */ = {isa = PBXBuildFile; fileRef = D931094920448F1C00DAEF18 /* temperatureUnitsToCelcius.plist */; };
-		D934C2ED202749DC00218E51 /* DistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D934C2EC202749DC00218E51 /* DistanceViewController.m */; };
 		D934C2F0202772B600218E51 /* TemperatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D934C2EF202772B600218E51 /* TemperatureViewController.m */; };
-		D93810202027AC76002728FB /* AreaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D938101F2027AC76002728FB /* AreaViewController.m */; };
-		D938102320292102002728FB /* VolumeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D938102220292102002728FB /* VolumeViewController.m */; };
 		D94B011420211D060017BFA3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D94B011320211D060017BFA3 /* AppDelegate.m */; };
 		D94B011A20211D060017BFA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D94B011820211D060017BFA3 /* Main.storyboard */; };
 		D94B011C20211D060017BFA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D94B011B20211D060017BFA3 /* Assets.xcassets */; };
 		D94B011F20211D060017BFA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D94B011D20211D060017BFA3 /* LaunchScreen.storyboard */; };
 		D94B012220211D060017BFA3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D94B012120211D060017BFA3 /* main.m */; };
-		D99E8F8B20213DD800A50B5F /* WeightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D99E8F8A20213DD800A50B5F /* WeightViewController.m */; };
 		D9FADA122048C07400F6E71C /* icons8-star-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA112048BF3500F6E71C /* icons8-star-35.png */; };
 		D9FADA132048C0A300F6E71C /* icons8-electrical-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA102048BCE700F6E71C /* icons8-electrical-35.png */; };
 		D9FADA142048C0A300F6E71C /* icons8-pressure-35.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FADA0F2048BC0000F6E71C /* icons8-pressure-35.png */; };
@@ -62,14 +58,8 @@
 		D9310943203F97CA00DAEF18 /* icons8-temperature-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-temperature-35.png"; sourceTree = "<group>"; };
 		D9310944203F97CB00DAEF18 /* icons8-volume-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-volume-35.png"; sourceTree = "<group>"; };
 		D931094920448F1C00DAEF18 /* temperatureUnitsToCelcius.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = temperatureUnitsToCelcius.plist; sourceTree = "<group>"; };
-		D934C2EB202749DC00218E51 /* DistanceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DistanceViewController.h; sourceTree = "<group>"; };
-		D934C2EC202749DC00218E51 /* DistanceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DistanceViewController.m; sourceTree = "<group>"; };
 		D934C2EE202772B600218E51 /* TemperatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TemperatureViewController.h; sourceTree = "<group>"; };
 		D934C2EF202772B600218E51 /* TemperatureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TemperatureViewController.m; sourceTree = "<group>"; };
-		D938101E2027AC76002728FB /* AreaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AreaViewController.h; sourceTree = "<group>"; };
-		D938101F2027AC76002728FB /* AreaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AreaViewController.m; sourceTree = "<group>"; };
-		D938102120292102002728FB /* VolumeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VolumeViewController.h; sourceTree = "<group>"; };
-		D938102220292102002728FB /* VolumeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VolumeViewController.m; sourceTree = "<group>"; };
 		D94B010F20211D060017BFA3 /* Convert This!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Convert This!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D94B011220211D060017BFA3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D94B011320211D060017BFA3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -78,8 +68,6 @@
 		D94B011E20211D060017BFA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D94B012020211D060017BFA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D94B012120211D060017BFA3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D99E8F8920213DD800A50B5F /* WeightViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeightViewController.h; sourceTree = "<group>"; };
-		D99E8F8A20213DD800A50B5F /* WeightViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeightViewController.m; sourceTree = "<group>"; };
 		D9FADA032048B68E00F6E71C /* icons8-speed-35 (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-speed-35 (1).png"; sourceTree = "<group>"; };
 		D9FADA0B2048B9AB00F6E71C /* icons8-time-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-time-35.png"; sourceTree = "<group>"; };
 		D9FADA0C2048BADA00F6E71C /* icons8-gas-station-35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-gas-station-35.png"; sourceTree = "<group>"; };
@@ -165,16 +153,8 @@
 				D94B011220211D060017BFA3 /* AppDelegate.h */,
 				D94B011320211D060017BFA3 /* AppDelegate.m */,
 				D94B011820211D060017BFA3 /* Main.storyboard */,
-				D938102120292102002728FB /* VolumeViewController.h */,
-				D938102220292102002728FB /* VolumeViewController.m */,
-				D934C2EB202749DC00218E51 /* DistanceViewController.h */,
-				D934C2EC202749DC00218E51 /* DistanceViewController.m */,
 				D934C2EE202772B600218E51 /* TemperatureViewController.h */,
 				D934C2EF202772B600218E51 /* TemperatureViewController.m */,
-				D99E8F8920213DD800A50B5F /* WeightViewController.h */,
-				D99E8F8A20213DD800A50B5F /* WeightViewController.m */,
-				D938101E2027AC76002728FB /* AreaViewController.h */,
-				D938101F2027AC76002728FB /* AreaViewController.m */,
 				D94B012120211D060017BFA3 /* main.m */,
 				D9310934203E194D00DAEF18 /* ViewController.m */,
 				D9310933203E194D00DAEF18 /* ViewController.h */,
@@ -355,14 +335,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D938102320292102002728FB /* VolumeViewController.m in Sources */,
-				D99E8F8B20213DD800A50B5F /* WeightViewController.m in Sources */,
 				D9310935203E194D00DAEF18 /* ViewController.m in Sources */,
-				D934C2ED202749DC00218E51 /* DistanceViewController.m in Sources */,
 				D9FADA27204A01C900F6E71C /* GeneralViewController.m in Sources */,
 				D934C2F0202772B600218E51 /* TemperatureViewController.m in Sources */,
 				D94B012220211D060017BFA3 /* main.m in Sources */,
-				D93810202027AC76002728FB /* AreaViewController.m in Sources */,
 				D94B011420211D060017BFA3 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
