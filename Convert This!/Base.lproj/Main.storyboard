@@ -55,7 +55,7 @@
                                                     <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="sbU-u1-ROr" kind="modal" id="MJZ-kI-jyQ"/>
+                                                    <action selector="didSelectConverter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mII-r6-gel"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLP-IA-O2y">
@@ -66,7 +66,7 @@
                                                     <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="SQa-Is-CaK" kind="modal" id="YoP-WI-GWy"/>
+                                                    <action selector="didSelectConverter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d2O-Ax-xoV"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hg8-f1-MCk">
@@ -77,7 +77,7 @@
                                                     <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="koB-Pz-THR" kind="modal" id="WfJ-VV-mcX"/>
+                                                    <action selector="didSelectConverter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xid-6w-al4"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZk-hc-uAe">
@@ -88,7 +88,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="NFW-uF-5VO" kind="modal" id="6eg-YP-dDv"/>
+                                                    <action selector="didSelectConverter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j8P-l3-4PH"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TS0-d0-fic">
@@ -99,7 +99,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="dU8-m6-6M0" kind="modal" id="KZ9-n1-se2"/>
+                                                    <action selector="didSelectConverter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ggL-ty-KHy"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTf-ut-h6I">

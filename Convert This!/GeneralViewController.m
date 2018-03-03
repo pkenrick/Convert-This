@@ -58,7 +58,18 @@ NSDictionary *unitsDict;
 -(void)getUnits:(NSString *)converterType {
     NSLog(@"%@", converterType);
     
-    if ([converterType isEqualToString:@"Speed"]) {
+    if ([converterType isEqualToString:@"Weight"]) {
+        unitsDict = [self loadUnitsFromFile:@"weightUnitsToKgs"];
+    } else if ([converterType isEqualToString:@"Distance"]) {
+        unitsDict = [self loadUnitsFromFile:@"distanceUnitsToMetres"];
+    } else if ([converterType isEqualToString:@"Area"]) {
+        unitsDict = [self loadUnitsFromFile:@"areaUnitsToSquareMetres"];
+    } else if ([converterType isEqualToString:@"Volume"]) {
+        unitsDict = [self loadUnitsFromFile:@"volumeUnitsToLitres"];
+
+    
+        
+    } else if ([converterType isEqualToString:@"Speed"]) {
         unitsDict = [self loadUnitsFromFile:@"speedUnitsToKilometrePerHour"];
     } else if ([converterType isEqualToString:@"Data"]) {
         unitsDict = [self loadUnitsFromFile:@"dataUnitsToKilobytes"];
