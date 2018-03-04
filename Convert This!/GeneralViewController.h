@@ -12,8 +12,13 @@
     IBOutlet UIPickerView *fromUnitPicker;
     IBOutlet UIPickerView *toUnitPicker;
     
-    IBOutlet UITextField *inputField;
-    IBOutlet UILabel *resultLabel;
+    IBOutlet UITextField *inputFieldMain;
+    IBOutlet UITextField *inputFieldFirst;
+    IBOutlet UITextField *inputFieldSecond;
+    
+    IBOutlet UILabel *resultLabelMain;
+    IBOutlet UILabel *resultLabelFirst;
+    IBOutlet UILabel *resultLabelSecond;
 }
 
 -(IBAction)dismissView:(id)sender;

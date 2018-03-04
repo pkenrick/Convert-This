@@ -2,31 +2,44 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Hours/Minutes</key>
+	<dict>
+		<key>units</key>
+		<array>
+			<string>Hours</string>
+			<string>Minutes</string>
+		</array>
+		<key>values</key>
+		<array>
+			<string>1</string>
+			<string>0.0166667</string>
+		</array>
+	</dict>
 	<key>Millenium</key>
 	<string>8.76e+6</string>
-	<key>Century</key>
+	<key>Centuries</key>
 	<string>365000</string>
-	<key>Decade</key>
+	<key>Decades</key>
 	<string>36500</string>
-	<key>Year (Calendar)</key>
+	<key>Years (Calendar)</key>
 	<string>8760</string>
-	<key>Month</key>
+	<key>Months</key>
 	<string>730.001</string>
-	<key>Week</key>
+	<key>Weeks</key>
 	<string>168</string>
-	<key>Day</key>
+	<key>Days</key>
 	<string>24</string>
-	<key>Hour</key>
+	<key>Hours</key>
 	<string>1</string>
-	<key>Minute</key>
+	<key>Minutes</key>
 	<string>0.0166667</string>
-	<key>Second</key>
+	<key>Seconds</key>
 	<string>0.00027777833333</string>
-	<key>Millisecond</key>
+	<key>Milliseconds</key>
 	<string>2.7778e-7</string>
-	<key>Microsecond</key>
+	<key>Microseconds</key>
 	<string>2.7778e-10</string>
-	<key>Nansecond</key>
+	<key>Nanseconds</key>
 	<string>2.7778e-13</string>
 </dict>
 </plist>

@@ -20,7 +20,6 @@ UINavigationController *navigationController;
 @implementation ViewController
 
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.bannerView.adUnitID = @"ca-app-pub-6253453252582106/3070482092";

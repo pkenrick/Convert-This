@@ -12,9 +12,9 @@
 	<real>0.0295735</real>
 	<key>Gallons (UK)</key>
 	<real>4.54609</real>
-	<key>Gallons (Dry) (US)</key>
+	<key>Gallons (US) (Dry)</key>
 	<real>4.40488</real>
-	<key>Gallons (Liquid) (US)</key>
+	<key>Gallons (US) (Liquid)</key>
 	<real>3.78541</real>
 	<key>Barrels (UK)</key>
 	<real>163.659</real>

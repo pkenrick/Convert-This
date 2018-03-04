@@ -4,15 +4,28 @@
 <dict>
 	<key>Stone</key>
 	<real>6.35029</real>
+	<key>Stone/Pounds</key>
+	<dict>
+		<key>units</key>
+		<array>
+			<string>Stone</string>
+			<string>Pounds</string>
+		</array>
+		<key>values</key>
+		<array>
+			<string>6.35029</string>
+			<string>0.453592</string>
+		</array>
+	</dict>
 	<key>Pounds</key>
 	<real>0.453592</real>
 	<key>Ounces</key>
 	<real>0.0283495</real>
 	<key>Tons (Metric)</key>
 	<real>1000</real>
-	<key>Tons (Long) (US)</key>
+	<key>Tons (US) (Long)</key>
 	<string>1016.05</string>
-	<key>Tons (Short) (US)</key>
+	<key>Tons (US) (Short)</key>
 	<string>907.185</string>
 	<key>Kilograms</key>
 	<integer>1</integer>

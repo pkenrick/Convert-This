@@ -2,6 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Feet/Inches</key>
+	<dict>
+		<key>units</key>
+		<array>
+			<string>Feet</string>
+			<string>Inches</string>
+		</array>
+		<key>values</key>
+		<array>
+			<string>0.3048</string>
+			<string>0.0254</string>
+		</array>
+	</dict>
 	<key>Chain</key>
 	<real>20.1168</real>
 	<key>Rod</key>

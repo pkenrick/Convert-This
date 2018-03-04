@@ -16,12 +16,15 @@
 
 @end
 
-NSString *_fromUnitSelected;
-NSString *_toUnitSelected;
-NSDictionary *unitsDict;
+@implementation GeneralViewController {
 
-
-@implementation GeneralViewController
+    NSString *_fromUnitSelected;
+    NSString *_toUnitSelected;
+    Boolean _fromUnitIsMulti;
+    Boolean _toUnitIsMulti;
+    NSDictionary *unitsDict;
+    Boolean _convertButtonPressed;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,6 +33,10 @@ NSDictionary *unitsDict;
     [self getUnits:self.converterType];
     [self setUpView:self.converterType];
     
+    [inputFieldMain addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [inputFieldFirst addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [inputFieldSecond addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+
     self.bannerView.adUnitID = @"ca-app-pub-6253453252582106/3070482092";
     self.bannerView.rootViewController = self;
     GADRequest *request = [GADRequest request];
@@ -51,12 +58,13 @@ NSDictionary *unitsDict;
     [toolbar setItems:[NSArray arrayWithObjects:flexibleSpace, barButtonItem, nil]];
     
     // Set the toolbar as accessory view of an UITextField object
-    inputField.inputAccessoryView = toolbar;
+    inputFieldMain.inputAccessoryView = toolbar;
+    inputFieldFirst.inputAccessoryView = toolbar;
+    inputFieldSecond.inputAccessoryView = toolbar;
     // ===================================================
 }
 
 -(void)getUnits:(NSString *)converterType {
-    NSLog(@"%@", converterType);
     
     if ([converterType isEqualToString:@"Weight"]) {
         unitsDict = [self loadUnitsFromFile:@"weightUnitsToKgs"];
@@ -88,56 +96,117 @@ NSDictionary *unitsDict;
 }
 
 -(void)setUpView:(NSString *)converterType {
-    inputField.placeholder = [NSString stringWithFormat:@"Enter %@", [converterType lowercaseString]];
+    inputFieldMain.placeholder = [NSString stringWithFormat:@"Enter %@", [converterType lowercaseString]];
 }
 
 -(IBAction)userDidPressConvert:(id)sender {
+    _convertButtonPressed = YES;
+    
     NSArray *sortedUnits = [[unitsDict allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     
     if (_fromUnitSelected == nil) {
         _fromUnitSelected = [sortedUnits firstObject];
     }
-    
     if (_toUnitSelected == nil) {
         _toUnitSelected = [sortedUnits firstObject];
     }
     
-    float intermediateResult = [self convertToIntermediateUnit:[inputField.text floatValue]];
-    float finalResult = [self convertFromIntermediateUnit:intermediateResult];
-    
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [formatter setMinimumFractionDigits:2];
-    if (finalResult >= 1) { [formatter setMaximumFractionDigits:2]; }
-    if (finalResult < 1) { [formatter setMaximumFractionDigits:4]; }
-    [formatter setRoundingMode:NSNumberFormatterRoundHalfEven];
-    
-    NSNumber *finalResultNumber = [NSNumber numberWithFloat:finalResult];
-    NSString *formattedResult;
-    if (finalResult < 0.00005) {
-        formattedResult = [NSString stringWithFormat:@"< 0.00005\n%@", _toUnitSelected];
-    } else {
-        formattedResult = [NSString stringWithFormat:@"%@\n%@", [formatter stringFromNumber:finalResultNumber], _toUnitSelected];
-    }
-    resultLabel.text = formattedResult;
+    [self initiateConversion];
 }
 
--(float)convertToIntermediateUnit:(float)inputValue {
-    float multiplier = [[unitsDict valueForKey:_fromUnitSelected] floatValue];
+-(void)initiateConversion {
+    
+    float intermediateResult;
+    if (_fromUnitIsMulti) {
+        NSString *fromUnitFirst = unitsDict[_fromUnitSelected][@"units"][0];
+        NSString *fromUnitSecond = unitsDict[_fromUnitSelected][@"units"][1];
+        
+        float intermediateResultFirst = [self convertToIntermediateUnit:[inputFieldFirst.text floatValue] fromUnit:fromUnitFirst];
+        float intermediateResultSecond = [self convertToIntermediateUnit:[inputFieldSecond.text floatValue] fromUnit:fromUnitSecond];
+        
+        intermediateResult = intermediateResultFirst + intermediateResultSecond;
+    } else {
+        intermediateResult = [self convertToIntermediateUnit:[inputFieldMain.text floatValue] fromUnit:_fromUnitSelected];
+    }
+
+    if (_toUnitIsMulti) {
+        NSString *toUnitFirst = unitsDict[_toUnitSelected][@"units"][0];
+        NSString *toUnitSecond = unitsDict[_toUnitSelected][@"units"][1];
+
+        // Calculate result for first unit of output
+        float finalResultFirst = [self convertFromIntermediateUnit:intermediateResult toUnit:toUnitFirst];
+        float finalResultFirstMod = fmod(finalResultFirst, 1.0);
+        int finalResultFirstInt = (int)finalResultFirst;
+        
+        // Calculate result for second unit of output
+        float intermediateResultSecond = [self convertToIntermediateUnit:finalResultFirstMod fromUnit:toUnitFirst];
+        float finalResultSecond = [self convertFromIntermediateUnit:intermediateResultSecond toUnit:toUnitSecond];
+        
+        resultLabelFirst.text = [NSString stringWithFormat:@"%i\n%@", finalResultFirstInt, toUnitFirst];
+        
+        if (finalResultSecond == 0.0) {
+            int finalResultSecondInt = (int)finalResultSecond;
+            resultLabelSecond.text = [NSString stringWithFormat:@"%i\n%@", finalResultSecondInt, toUnitSecond];
+        } else {
+            resultLabelSecond.text = [self formatForDisplay:finalResultSecond unit:toUnitSecond];
+        }
+    } else {
+        float finalResult = [self convertFromIntermediateUnit:intermediateResult toUnit:_toUnitSelected];
+        [self formatForDisplay:finalResult unit:_toUnitSelected];
+        resultLabelMain.text = [self formatForDisplay:finalResult unit:_toUnitSelected];
+    }
+}
+
+-(float)convertToIntermediateUnit:(float)inputValue fromUnit:(NSString *)fromUnitName {
+    float multiplier = [[unitsDict valueForKey:fromUnitName] floatValue];
     return inputValue * multiplier;
 }
 
--(float)convertFromIntermediateUnit:(float)intermediateResult {
-    float divisor = [[unitsDict valueForKey:_toUnitSelected] floatValue];
+-(float)convertFromIntermediateUnit:(float)intermediateResult toUnit:(NSString *)toUnitName {
+    float divisor = [[unitsDict valueForKey:toUnitName] floatValue];
     return intermediateResult / divisor;
+}
+
+-(NSString *)formatForDisplay:(float)result unit:(NSString *)toUnit {
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [formatter setMinimumFractionDigits:2];
+    if (result >= 1) { [formatter setMaximumFractionDigits:2]; }
+    if (result < 1) { [formatter setMaximumFractionDigits:4]; }
+    [formatter setRoundingMode:NSNumberFormatterRoundHalfEven];
+    
+    NSNumber *resultNumber = [NSNumber numberWithFloat:result];
+    NSString *formattedResult;
+    if (result < 0.00005) {
+        formattedResult = [NSString stringWithFormat:@"< 0.00005\n%@", toUnit];
+    } else {
+        formattedResult = [NSString stringWithFormat:@"%@\n%@", [formatter stringFromNumber:resultNumber], toUnit];
+    }
+    return formattedResult;
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     NSArray *sortedUnits = [[unitsDict allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     if (pickerView == fromUnitPicker) {
         _fromUnitSelected  = [sortedUnits objectAtIndex:row];
+        if ([unitsDict[_fromUnitSelected] isKindOfClass:[NSDictionary class]]) {
+             _fromUnitIsMulti = YES;
+        } else {
+            _fromUnitIsMulti = NO;
+        }
+        [self setInputs];
     } else if (pickerView == toUnitPicker){
         _toUnitSelected = [sortedUnits objectAtIndex:row];
+        if ([unitsDict[_toUnitSelected] isKindOfClass:[NSDictionary class]]) {
+            _toUnitIsMulti = YES;
+        } else {
+            _toUnitIsMulti = NO;
+        }
+        [self setResultArea];
+    }
+    
+    if (_convertButtonPressed) {
+        [self initiateConversion];
     }
 }
 
@@ -149,10 +218,10 @@ NSDictionary *unitsDict;
     return 1;
 }
 
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    NSArray *sortedUnits = [[unitsDict allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-    return [sortedUnits objectAtIndex: row];
-}
+//- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+//    NSArray *sortedUnits = [[unitsDict allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+//    return [sortedUnits objectAtIndex: row];
+//}
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
     UILabel* pickerTextLabel = (UILabel*)view;
@@ -166,8 +235,48 @@ NSDictionary *unitsDict;
     return pickerTextLabel;
 }
 
+- (void)setInputs {
+    if (_fromUnitIsMulti) {
+        NSString *firstUnit = unitsDict[_fromUnitSelected][@"units"][0];
+        NSString *secondUnit = unitsDict[_fromUnitSelected][@"units"][1];
+        inputFieldFirst.placeholder = [NSString stringWithFormat:@"Enter %@", firstUnit];
+        inputFieldSecond.placeholder = [NSString stringWithFormat:@"Enter %@", secondUnit];
+        inputFieldMain.hidden = true;
+        inputFieldFirst.hidden = false;
+        inputFieldSecond.hidden = false;
+    } else {
+        inputFieldMain.placeholder = [NSString stringWithFormat:@"Enter %@", _fromUnitSelected];
+        inputFieldMain.hidden = false;
+        inputFieldFirst.hidden = true;
+        inputFieldSecond.hidden = true;
+    }
+}
+
+- (void)setResultArea {
+    if (_toUnitIsMulti) {
+        resultLabelMain.hidden = true;
+        resultLabelMain.text = @"";
+        resultLabelFirst.hidden = false;
+        resultLabelSecond.hidden = false;
+    } else {
+        resultLabelMain.hidden = false;
+        resultLabelFirst.hidden = true;
+        resultLabelSecond.hidden = true;
+        resultLabelFirst.text = @"";
+        resultLabelSecond.text = @"";
+    }
+}
+
+- (void)textFieldDidChange:(id)sender {
+    if(_convertButtonPressed) {
+        [self initiateConversion];
+    }
+}
+
 - (void)dismissKeyboard {
-    [inputField resignFirstResponder];
+    [inputFieldMain resignFirstResponder];
+    [inputFieldFirst resignFirstResponder];
+    [inputFieldSecond resignFirstResponder];
 }
 
 - (IBAction)dismissView:(id)sender {

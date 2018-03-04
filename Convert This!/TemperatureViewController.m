@@ -15,15 +15,18 @@
 
 @end
 
-NSString *_tempFromUnitSelected;
-NSString *_tempToUnitSelected;
-
-NSDictionary *_temperatureUnitsToCelcius;
-
-@implementation TemperatureViewController
+@implementation TemperatureViewController {
+    
+    NSString *_tempFromUnitSelected;
+    NSString *_tempToUnitSelected;
+    NSDictionary *_temperatureUnitsToCelcius;
+    Boolean _convertButtonPressed;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [inputField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     
     self.bannerView.adUnitID = @"ca-app-pub-6253453252582106/3249373666";
     self.bannerView.rootViewController = self;
@@ -52,14 +55,6 @@ NSDictionary *_temperatureUnitsToCelcius;
     
     NSString *plistCatPath = [[NSBundle mainBundle] pathForResource:@"temperatureUnitsToCelcius" ofType:@"plist"];
     _temperatureUnitsToCelcius = [NSDictionary dictionaryWithContentsOfFile:plistCatPath];
-    
-//    for(NSString *key in [_temperatureUnitsToCelcius allKeys]) {
-//        NSDictionary *unitDict = [_temperatureUnitsToCelcius objectForKey:key];
-//        for(NSString *innerKey in [unitDict allKeys]) {
-//            NSLog(@"%@: %f", key, [[unitDict objectForKey:innerKey] floatValue]);
-//        }
-//
-//    }
 }
 
 - (IBAction)toggleSign:(id)sender {
@@ -70,9 +65,13 @@ NSDictionary *_temperatureUnitsToCelcius;
             inputField.text = [inputField.text substringFromIndex:1];
         }
     }
+    if (_convertButtonPressed) {
+        [self initiateConversion];
+    }
 }
 
 - (IBAction)userDidPressConvert:(id)sender {
+    _convertButtonPressed = YES;
     
     NSArray *sortedKeys = [[_temperatureUnitsToCelcius allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
 
@@ -83,6 +82,11 @@ NSDictionary *_temperatureUnitsToCelcius;
     if (_tempToUnitSelected == nil) {
         _tempToUnitSelected = [sortedKeys firstObject];
     }
+    
+    [self initiateConversion];
+}
+
+- (void)initiateConversion {
     
     float celciusResult = [self convertToCelcius:[inputField.text floatValue]];
     float finalResult = [self convertFromCelcius:celciusResult];
@@ -134,6 +138,12 @@ NSDictionary *_temperatureUnitsToCelcius;
     } else {
         _tempToUnitSelected = [sortedKeys objectAtIndex:row];
     }
+    
+    inputField.placeholder = [NSString stringWithFormat:@"Enter %@", _tempFromUnitSelected];
+    
+    if (_convertButtonPressed) {
+        [self initiateConversion];
+    }
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
@@ -144,9 +154,27 @@ NSDictionary *_temperatureUnitsToCelcius;
     return 1;
 }
 
-- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    NSArray *sortedKeys = [[_temperatureUnitsToCelcius allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-    return [sortedKeys objectAtIndex:row];
+//- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+//    NSArray *sortedKeys = [[_temperatureUnitsToCelcius allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+//    return [sortedKeys objectAtIndex:row];
+//}
+
+- (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
+    UILabel* pickerTextLabel = (UILabel*)view;
+    if (!pickerTextLabel){
+        pickerTextLabel = [[UILabel alloc] init];
+        [pickerTextLabel setFont:[UIFont fontWithName:@"Helvetica" size:15]];
+        [pickerTextLabel setTextAlignment:NSTextAlignmentCenter];
+    }
+    NSArray *sortedUnits = [[_temperatureUnitsToCelcius allKeys] sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    pickerTextLabel.text = [sortedUnits objectAtIndex: row];
+    return pickerTextLabel;
+}
+
+- (void)textFieldDidChange:(id)sender {
+    if (_convertButtonPressed) {
+        [self initiateConversion];
+    }
 }
 
 - (void)dismissKeyboard {
